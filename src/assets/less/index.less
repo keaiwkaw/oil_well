@@ -1,0 +1,49 @@
+body{
+  overflow: hidden;
+}
+
+#root,#App{
+  width: 100%;
+  height: 100%;
+}
+
+#App{
+  width: 100vw;
+  height: 100vh;
+}
+
+.header{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: end;
+  color: white;
+  background-color: rgba(53, 134, 237);
+  &-name{
+    position: absolute;
+    left: 0;
+   
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+  }
+  &-item{
+    margin-right: 30px;
+  }
+}
+.header-menu{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  
+  position: relative;
+}
+.c-container{
+  display: flex;
+}
+.c-sys-name{
+  position: absolute;
+  right: 0;
+}
