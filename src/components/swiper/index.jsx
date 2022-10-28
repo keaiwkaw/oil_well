@@ -152,36 +152,39 @@ const Index = () => {
     return <Pie {...config} />;
   };
   return (
-    <Swiper
-      modules={[Navigation]}
-      slidesPerView={1}
-      navigation
-    >
-      <SwiperSlide>
-        <div className='one-page page'>
-          <div className='content'>
-            <div className='title'>原始数据</div>
-            <div className='stack-line'><StackLine /></div>
-          </div>
-          <div className='content'>
-            <div className='title'>指标评价</div>
-            <div className='heat-map'>
-              <div className='rate'>
-                <Tag color='success'>稳定性时间:A</Tag>
-                <Tag color='success'>正确率:B</Tag>
+    <div className="c-swiper">
+      <Swiper
+        modules={[Navigation]}
+        slidesPerView={1}
+        navigation
+        style={{height:'100%'}}
+      >
+        <SwiperSlide>
+          <div className='one-page page'>
+            <div className='content'>
+              <div className='title'>原始数据</div>
+              <div className='stack-line'><StackLine /></div>
+            </div>
+            <div className='content'>
+              <div className='title'>指标评价</div>
+              <div className='heat-map'>
+                <div className='rate'>
+                  <Tag color='success'>稳定性时间:A</Tag>
+                  <Tag color='success'>正确率:B</Tag>
+                </div>
+                <Map />
               </div>
-              <Map />
             </div>
           </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className='two-page page'>
-          <DemoPie />
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className='two-page page'>
+            <DemoPie />
           123
         </div>
-      </SwiperSlide>
-    </Swiper >
+        </SwiperSlide>
+      </Swiper >
+    </div>
   )
 }
 
