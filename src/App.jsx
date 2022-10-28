@@ -2,7 +2,6 @@
 import { routeConfig } from "./config/route";
 import { useRoutes } from "react-router";
 import MenuComp from './components/menu'
-import { Menu } from "antd"
 
 import './assets/less/index.less'
 import './assets/less/global.less'

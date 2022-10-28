@@ -22,12 +22,6 @@ const Index = () => {
     }, []);
 
     const asyncFetch = () => {
-      // fetch('https://gw.alipayobjects.com/os/bmw-prod/55424a73-7cb8-4f79-b60d-3ab627ac5698.json')
-      //     .then((response) => response.json())
-      //     .then((json) => setData(json))
-      //     .catch((error) => {
-      //         console.log('fetch data failed', error);
-      //     });
       const res = []
       json.forEach((item, index) => {
         const bpi = {
@@ -164,6 +158,18 @@ const Index = () => {
             <div className='stack-line'><StackLine /></div>
           </div>
           <div className='content'>
+            <div className='title'>原始数据</div>
+            <div className='stack-line'><StackLine /></div>
+          </div>
+          <div className='content'>
+            <div className='title'>原始数据</div>
+            <div className='stack-line'><StackLine /></div>
+          </div>
+          <div className='content'>
+            <div className='title'>原始数据</div>
+            <div className='stack-line'><StackLine /></div>
+          </div>
+          <div className='content'>
             <div className='title'>指标评价</div>
             <div className='heat-map'>
               <div className='rate'>
@@ -178,7 +184,6 @@ const Index = () => {
       <SwiperSlide>
         <div className='two-page page'>
           <DemoPie />
-          123
         </div>
       </SwiperSlide>
     </Swiper >
