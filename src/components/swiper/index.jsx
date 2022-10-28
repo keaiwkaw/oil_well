@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 
 import { Navigation } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Tag } from 'antd';
 import { Line, Heatmap, Pie } from "@ant-design/plots";
@@ -179,6 +178,7 @@ const Index = () => {
       <SwiperSlide>
         <div className='two-page page'>
           <DemoPie />
+          123
         </div>
       </SwiperSlide>
     </Swiper >
