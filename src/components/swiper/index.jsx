@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Tag } from 'antd';
 import { Line, Heatmap, Pie } from "@ant-design/plots";
 
-import json from "./data.js"
+import meta from "./data.js"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 import './index.less'
 
 const Index = () => {
-  const StackLine = () => {
+  const StackLine1 = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -21,36 +21,31 @@ const Index = () => {
     }, []);
 
     const asyncFetch = () => {
-      // fetch('https://gw.alipayobjects.com/os/bmw-prod/55424a73-7cb8-4f79-b60d-3ab627ac5698.json')
-      //     .then((response) => response.json())
-      //     .then((json) => setData(json))
-      //     .catch((error) => {
-      //         console.log('fetch data failed', error);
-      //     });
       const res = []
-      json.forEach((item, index) => {
+      const len = meta.data.originBpi.length
+      for (let i = 0; i < len; i++) {
         const bpi = {
-          day: item.ts,
-          value: item.bpi,
+          day: i + 1,
+          value: meta.data.originBpi[i],
           category: "bpi"
         }
         const pi = {
-          day: item.ts,
-          value: item.pi,
+          day: i + 1,
+          value: meta.data.originPi[i],
           category: "pi"
         }
         const zuv = {
-          day: item.ts,
-          value: item.zuv,
+          day: i + 1,
+          value: meta.data.originZuv[i],
           category: "zuv"
         }
         const scms = {
-          day: item.ts,
-          value: item.scms,
+          day: i + 1,
+          value: meta.data.originScms[i],
           category: "scms"
         }
         res.push(bpi, pi, zuv, scms)
-      })
+      }
       setData(res)
     };
     const config = {
@@ -59,6 +54,106 @@ const Index = () => {
       yField: 'value',
       seriesField: 'category',
       color: ['#1979C9', '#D62A0D', '#FAA219'],
+    };
+
+    return <Line {...config} />;
+  };
+  const StackLine2 = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      asyncFetch();
+    }, []);
+
+    const asyncFetch = () => {
+      const res = []
+      const len = meta.data.originBpiSubBi.length
+      for (let i = 0; i < len; i++) {
+        const bpiSubBi = {
+          day: i + 1,
+          value: meta.data.originBpiSubBi[i],
+          category: "bpiSubBi"
+        }
+        res.push(bpiSubBi)
+      }
+
+      setData(res)
+    };
+    const config = {
+      data,
+      xField: 'day',
+      yField: 'value',
+      seriesField: 'category',
+      color: ['#1979C9'],
+    };
+
+    return <Line {...config} />;
+  };
+  const StackLine3 = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      asyncFetch();
+    }, []);
+
+    const asyncFetch = () => {
+      const res = []
+      const len1 = meta.data.fftBpi.x.length
+      for (let i = 0; i < len1; i++) {
+        const fftBpi = {
+          x: meta.data.fftBpi.x[i],
+          y: meta.data.fftBpi.y[i],
+          category: "fftBpi"
+        }
+        res.push(fftBpi)
+      }
+      const len2 = meta.data.fftPi.x.length
+      for (let i = 0; i < len2; i++) {
+        const fftPi = {
+          x: meta.data.fftPi.x[i],
+          y: meta.data.fftPi.y[i],
+          category: "fftPi"
+        }
+        res.push(fftPi)
+      }
+      setData(res)
+    };
+    const config = {
+      data,
+      xField: 'x',
+      yField: 'y',
+      seriesField: 'category',
+      color: ['#1979C9'],
+    };
+
+    return <Line {...config} />;
+  };
+  const StackLine4 = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      asyncFetch();
+    }, []);
+
+    const asyncFetch = () => {
+      const res = []
+      const len1 = meta.data.fftBpiSubPi.x.length
+      for (let i = 0; i < len1; i++) {
+        const fftBpiSubPi = {
+          x: meta.data.fftBpiSubPi.x[i],
+          y: meta.data.fftBpiSubPi.y[i],
+          category: "fftBpiSubPi"
+        }
+        res.push(fftBpiSubPi)
+      }
+      setData(res)
+    };
+    const config = {
+      data,
+      xField: 'x',
+      yField: 'y',
+      seriesField: 'category',
+      color: ['#1979C9'],
     };
 
     return <Line {...config} />;
@@ -161,20 +256,20 @@ const Index = () => {
         <SwiperSlide>
           <div className='one-page page'>
             <div className='content'>
-              <div className='title'>原始数据</div>
-              <div className='stack-line'><StackLine /></div>
+              <div className='title'>油压套压原图</div>
+              <div className='stack-line'><StackLine1 /></div>
             </div>
             <div className='content'>
-              <div className='title'>原始数据</div>
-              <div className='stack-line'><StackLine /></div>
+              <div className='title'>油压套压差图</div>
+              <div className='stack-line'><StackLine2 /></div>
             </div>
             <div className='content'>
-              <div className='title'>原始数据</div>
-              <div className='stack-line'><StackLine /></div>
+              <div className='title'>油压套压FFT变换，频谱图</div>
+              <div className='stack-line'><StackLine3 /></div>
             </div>
             <div className='content'>
-              <div className='title'>原始数据</div>
-              <div className='stack-line'><StackLine /></div>
+              <div className='title'>油套压差FFT变换，频谱图</div>
+              <div className='stack-line'><StackLine4 /></div>
             </div>
             <div className='content'>
               <div className='title'>指标评价</div>
