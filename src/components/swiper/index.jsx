@@ -204,19 +204,22 @@ const Index = () => {
         }
       },
       xAxis3D: {
-        type: 'value'
+        type: 'value',
+        name:"FrequencyDomain"
       },
       yAxis3D: {
-        type: 'value'
+        type: 'value',
+        name:"timeDomain"
       },
       zAxis3D: {
-        type: 'value'
+        type: 'value',
+        name:"timeFrequencyDomain"
       },
       grid3D: {
-        show: true,//是否显示三维迪卡尔坐标
-        boxWidth: 100,//三维场景高度
-        // boxHeight:200,//三维场景高度
-        boxDepth: 80,//三维笛卡尔坐标系组件在三维场景中的深度
+        show: true,
+        boxWidth: 90,
+        boxHeight:90,
+        boxDepth: 90,
         viewControl: {
           projection: 'orthographic'
         }
