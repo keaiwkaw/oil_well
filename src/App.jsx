@@ -1,6 +1,6 @@
-
 import { routeConfig } from "./config/route";
 import { useRoutes } from "react-router";
+
 import MenuComp from './components/menu'
 
 import './assets/less/index.less'
@@ -20,7 +20,9 @@ function App() {
       </header>
       <div className="c-container">
         <MenuComp />
-        <div className="c-route">{element}</div>
+        <div className="c-route">
+          {element}
+        </div>
       </div>
     </div >
   )
