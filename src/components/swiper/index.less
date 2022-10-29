@@ -2,6 +2,7 @@
     width: 100%;
     height:calc(100vh - 60px) ;
     display: flex;
+    padding-top: 60px;
     align-items: center;
   .page {
     width: 100%;
@@ -9,51 +10,49 @@
     display: flex;
     align-items: center;
   }
-  .title {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    text-align: center;
-    color: white;
-    background-color: #108ee9;
-    padding: 8px;
-    margin: 10px 0;
-    font-size: 16px;
-    font-family: "Microsoft YaHei";
-  }
   .one-page {
     flex-flow: column;
     overflow-y: auto;
     align-content: space-between;
     height:100vh;
     padding-bottom: 40px;
-    .content {
-      position: relative;
-      width: calc(100% - 80px);
-      margin-bottom: 40px;
-      .stack-line {
-        margin: 10px;
-        padding-top: 50px;
-        width: 80vw;
-        height: calc(40vh - 40px);
-      }
-      .stack-line3D{
-        padding: 20px 0;
-        height: calc(80vh - 20px);
-      }
-      .heat-map {
-        margin: 10px;
-        padding-top: 50px;
-        height: calc(40vh - 40px);
-      }
-      .rate {
+    .content-flex{
+      display: flex;
+      justify-content: space-between;
+      .content {
+        position: relative;
+        margin-bottom: 40px;
         display: flex;
-        width: 200px;
-        justify-content: space-between;
-        top: 5%;
-        right: 10px;
-        position: absolute;
+        flex-flow: column;
+        .title {
+          text-align: center;
+          color: white;
+          background-color: #108ee9;
+          padding: 10px;
+          margin: 10px auto;
+          font-size: 16px;
+          font-family: "Microsoft YaHei";
+        }
+        .stack-line {
+          margin: 10px;
+          width: calc(50vw - 60px);
+          height: calc(40vh - 40px);
+        }
+        .stack-line3D{
+          width: 50vw;
+          height: calc(80vh - 20px);
+        }
+        .heat-map {
+          margin: 10px;
+          width: 100vw;
+        }
+        .rate {
+          display: flex;
+          position: absolute;
+          justify-content: space-between;
+          top: 5%;
+          right: 10px;
+        }
       }
     }
   }

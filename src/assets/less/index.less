@@ -14,10 +14,12 @@
   width: 100%;
   display: flex;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
   justify-content: end;
   color: white;
   background-color: rgba(53, 134, 237);
+  z-index: 999;
   &-name{
     position: absolute;
     left: 0;
@@ -34,22 +36,16 @@
   width: 100%;
   display: flex;
   justify-content: end;
-  
   position: relative;
 }
 .c-container{
   display: flex;
   width: 100%;
   height: calc(100vh - 60px);
+  justify-content: center;
+  // overflow: auto;
   .c-menu{
-    // width: 20%;
     width: 190px;
-  }
-  .c-route{
-    width: calc(100% - 190px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 .c-sys-name{

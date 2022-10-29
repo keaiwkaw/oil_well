@@ -205,20 +205,20 @@ const Index = () => {
       },
       xAxis3D: {
         type: 'value',
-        name:"FrequencyDomain"
+        name: "FrequencyDomain"
       },
       yAxis3D: {
         type: 'value',
-        name:"timeDomain"
+        name: "timeDomain"
       },
       zAxis3D: {
         type: 'value',
-        name:"timeFrequencyDomain"
+        name: "timeFrequencyDomain"
       },
       grid3D: {
         show: true,
         boxWidth: 90,
-        boxHeight:90,
+        boxHeight: 90,
         boxDepth: 90,
         viewControl: {
           projection: 'orthographic'
@@ -335,34 +335,42 @@ const Index = () => {
       >
         <SwiperSlide>
           <div className='one-page page'>
-            <div className='content'>
-              <div className='title'>油压套压原图</div>
-              <div className='stack-line'><StackLine1 /></div>
+            <div className='content-flex'>
+              <div className='content'>
+                <div className='title'>油压套压原图</div>
+                <div className='stack-line'><StackLine1 /></div>
+              </div>
+              <div className='content'>
+                <div className='title'>油压套压差图</div>
+                <div className='stack-line'><StackLine2 /></div>
+              </div>
             </div>
-            <div className='content'>
-              <div className='title'>油压套压差图</div>
-              <div className='stack-line'><StackLine2 /></div>
+            <div className="content-flex">
+              <div className='content'>
+                <div className='title'>油压套压FFT变换，频谱图</div>
+                <div className='stack-line'><StackLine3 /></div>
+              </div>
+              <div className='content'>
+                <div className='title'>油套压差FFT变换，频谱图</div>
+                <div className='stack-line'><StackLine4 /></div>
+              </div>
             </div>
-            <div className='content'>
-              <div className='title'>油压套压FFT变换，频谱图</div>
-              <div className='stack-line'><StackLine3 /></div>
+            <div className="content-flex">
+              <div className='content'>
+                <div className='title'>时频图</div>
+                <div className='stack-line3D'><StackLine3D /></div>
+              </div>
             </div>
-            <div className='content'>
-              <div className='title'>油套压差FFT变换，频谱图</div>
-              <div className='stack-line'><StackLine4 /></div>
-            </div>
-            <div className='content'>
-              <div className='title'>时频图</div>
-              <div className='stack-line3D'><StackLine3D /></div>
-            </div>
-            <div className='content'>
-              <div className='title'>指标评价</div>
-              <div className='heat-map'>
-                <div className='rate'>
-                  <Tag color='success'>稳定性时间:A</Tag>
-                  <Tag color='success'>正确率:B</Tag>
+            <div className="content-flex">
+              <div className='content'>
+                <div className='title'>指标评价</div>
+                <div className='heat-map'>
+                  <div className='rate'>
+                    <Tag color='success' style={{fontSize:15,padding:10}}>稳定性时间:A</Tag>
+                    <Tag color='success' style={{fontSize:15,padding:10}}>正确率:B</Tag>
+                  </div>
+                  <Map />
                 </div>
-                <Map />
               </div>
             </div>
           </div>
