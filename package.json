@@ -4,13 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@ant-design/plots": "^1.2.2",
     "antd": "^4.23.6",
+    "echarts": "^5.4.0",
+    "echarts-for-react": "^3.0.2",
+    "echarts-gl": "^2.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.4.2",

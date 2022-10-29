@@ -5,6 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Tag } from 'antd';
 import { Line, Heatmap, Pie } from "@ant-design/plots";
 
+import ReactECharts from 'echarts-for-react';
+import 'echarts-gl';
+
 import meta from "./data.js"
 
 import 'swiper/css';
@@ -158,6 +161,34 @@ const Index = () => {
 
     return <Line {...config} />;
   };
+  const StackLine3D = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      asyncFetch();
+    }, []);
+
+    const asyncFetch = () => {
+      setData([[-1, -1, -1], [0, 0, 0], [1, 1, 1]])
+    };
+    const option = {
+      grid3D: {},
+      xAxis3D: {},
+      yAxis3D: {},
+      zAxis3D: {},
+      series: [{
+        type: 'scatter3D',
+        symbolSize: 50,
+        data: data,
+        itemStyle: {
+          opacity: 1
+        }
+      }]
+    };
+    return (
+      <ReactECharts option={option} />
+    );
+  }
   const Map = () => {
     const [data, setData] = useState([]);
 
@@ -270,6 +301,10 @@ const Index = () => {
             <div className='content'>
               <div className='title'>油套压差FFT变换，频谱图</div>
               <div className='stack-line'><StackLine4 /></div>
+            </div>
+            <div className='content'>
+              <div className='title'>时频图</div>
+              <div className='stack-line'><StackLine3D /></div>
             </div>
             <div className='content'>
               <div className='title'>指标评价</div>
