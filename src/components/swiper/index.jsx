@@ -9,6 +9,7 @@ import ReactECharts from 'echarts-for-react';
 import 'echarts-gl';
 
 import meta from "./data.js"
+import meta3d from "./res.js"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -167,26 +168,71 @@ const Index = () => {
     useEffect(() => {
       asyncFetch();
     }, []);
-
     const asyncFetch = () => {
-      setData([[-1, -1, -1], [0, 0, 0], [1, 1, 1]])
-    };
-    const option = {
-      grid3D: {},
-      xAxis3D: {},
-      yAxis3D: {},
-      zAxis3D: {},
-      series: [{
-        type: 'scatter3D',
-        symbolSize: 50,
-        data: data,
-        itemStyle: {
-          opacity: 1
+      const res = []
+      let len1 = meta3d.data.FrequencyDomain.length
+      for (let i = 0; i < len1; i++) {
+        let len2 = meta3d.data.FrequencyDomain[i].length
+        for (let j = 0; j < len2; j++) {
+          let arr = [meta3d.data.FrequencyDomain[i][j], meta3d.data.timeDomain[i][j], meta3d.data.timeFrequencyDomain[i][j]]
+          res.push(arr)
         }
-      }]
+      }
+      setData(res)
+    }
+    const option = {
+      tooltip: {},
+      visualMap: {
+        show: false,
+        dimension: 2,
+        min: 0,
+        max: 30,
+        inRange: {
+          color: [
+            '#313695',
+            '#4575b4',
+            '#74add1',
+            '#abd9e9',
+            '#e0f3f8',
+            '#ffffbf',
+            '#fee090',
+            '#fdae61',
+            '#f46d43',
+            '#d73027',
+            '#a50026'
+          ]
+        }
+      },
+      xAxis3D: {
+        type: 'value'
+      },
+      yAxis3D: {
+        type: 'value'
+      },
+      zAxis3D: {
+        type: 'value'
+      },
+      grid3D: {
+        show: true,//是否显示三维迪卡尔坐标
+        boxWidth: 100,//三维场景高度
+        // boxHeight:200,//三维场景高度
+        boxDepth: 80,//三维笛卡尔坐标系组件在三维场景中的深度
+        viewControl: {
+          projection: 'orthographic'
+        }
+      },
+      series: [
+        {
+          type: 'line3D',
+          data: data,
+          lineStyle: {
+            width: 4
+          }
+        }
+      ]
     };
     return (
-      <ReactECharts option={option} />
+      <ReactECharts option={option} style={{ height: 600 }} />
     );
   }
   const Map = () => {
@@ -304,7 +350,7 @@ const Index = () => {
             </div>
             <div className='content'>
               <div className='title'>时频图</div>
-              <div className='stack-line'><StackLine3D /></div>
+              <div className='stack-line3D'><StackLine3D /></div>
             </div>
             <div className='content'>
               <div className='title'>指标评价</div>
