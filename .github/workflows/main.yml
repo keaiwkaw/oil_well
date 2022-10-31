@@ -1,0 +1,31 @@
+name: CI
+on:
+ push:
+  branches:
+   - main
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Clone Code
+      uses: action/checkout@v3
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+       node-version: 16
+    - name: Build
+      run: |
+        npm install -g pnpm
+        pnpm install 
+        pnpm run build
+    - name: Deploy
+      uses: cross-the-world/scp-pipeline@master
+      with:
+       host: ${{secrets.HOST}}
+       user: ${{secrets.USER}}
+       pass: ${{secrets.PASSWORD}
+       connect_timeout: 10s
+       local: ./dist/*'
+       remote: /api/oilWell/dist
+     
+      
