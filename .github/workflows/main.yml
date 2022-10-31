@@ -23,7 +23,7 @@ jobs:
       with:
        host: ${{secrets.HOST}}
        user: ${{secrets.USER}}
-       pass: ${{secrets.PASSWORD}
+       pass: ${{secrets.PASSWORD}}
        connect_timeout: 10s
        local: ./dist/*'
        remote: /api/oilWell/dist
