@@ -31,22 +31,22 @@ const Index = () => {
         const bpi = {
           day: i + 1,
           value: meta.data.originBpi[i],
-          category: "bpi"
+          category: "原始套压Mpa"
         }
         const pi = {
           day: i + 1,
           value: meta.data.originPi[i],
-          category: "pi"
+          category: "原始油压Mpa"
         }
         const zuv = {
           day: i + 1,
           value: meta.data.originZuv[i],
-          category: "zuv"
+          category: "原始状态"
         }
         const scms = {
           day: i + 1,
           value: meta.data.originScms[i],
-          category: "scms"
+          category: "原始生产制度"
         }
         res.push(bpi, pi, zuv, scms)
       }
@@ -76,7 +76,7 @@ const Index = () => {
         const bpiSubBi = {
           day: i + 1,
           value: meta.data.originBpiSubBi[i],
-          category: "bpiSubBi"
+          category: "原始bpi-原始bi"
         }
         res.push(bpiSubBi)
       }
@@ -107,7 +107,7 @@ const Index = () => {
         const fftBpi = {
           x: meta.data.fftBpi.x[i],
           y: meta.data.fftBpi.y[i],
-          category: "fftBpi"
+          category: "傅里叶变换后的Bpi模型"
         }
         res.push(fftBpi)
       }
@@ -116,7 +116,7 @@ const Index = () => {
         const fftPi = {
           x: meta.data.fftPi.x[i],
           y: meta.data.fftPi.y[i],
-          category: "fftPi"
+          category: "傅里叶变换后的Pi模型"
         }
         res.push(fftPi)
       }
@@ -146,7 +146,7 @@ const Index = () => {
         const fftBpiSubPi = {
           x: meta.data.fftBpiSubPi.x[i],
           y: meta.data.fftBpiSubPi.y[i],
-          category: "fftBpiSubPi"
+          category: "傅里叶变换后的Bpi-Pi模型"
         }
         res.push(fftBpiSubPi)
       }
@@ -174,7 +174,7 @@ const Index = () => {
       for (let i = 0; i < len1; i++) {
         let len2 = meta3d.data.FrequencyDomain[i].length
         for (let j = 0; j < len2; j++) {
-          let arr = [meta3d.data.FrequencyDomain[i][j], meta3d.data.timeDomain[i][j], meta3d.data.timeFrequencyDomain[i][j]]
+          let arr = [meta3d.data.timeDomain[i][j], meta3d.data.FrequencyDomain[i][j], meta3d.data.timeFrequencyDomain[i][j]]
           res.push(arr)
         }
       }
@@ -205,15 +205,15 @@ const Index = () => {
       },
       xAxis3D: {
         type: 'value',
-        name: "FrequencyDomain"
+        name: "时域信息"
       },
       yAxis3D: {
         type: 'value',
-        name: "timeDomain"
+        name: "频域信息"
       },
       zAxis3D: {
         type: 'value',
-        name: "timeFrequencyDomain"
+        name: "时间频域信息"
       },
       grid3D: {
         show: true,
@@ -360,8 +360,6 @@ const Index = () => {
                 <div className='title'>时频图</div>
                 <div className='stack-line3D'><StackLine3D /></div>
               </div>
-            </div>
-            <div className="content-flex">
               <div className='content'>
                 <div className='title'>指标评价</div>
                 <div className='heat-map'>
@@ -373,6 +371,18 @@ const Index = () => {
                 </div>
               </div>
             </div>
+            {/* <div className="content-flex">
+              <div className='content'>
+                <div className='title'>指标评价</div>
+                <div className='heat-map'>
+                  <div className='rate'>
+                    <Tag color='success' style={{fontSize:15,padding:10}}>稳定性时间:A</Tag>
+                    <Tag color='success' style={{fontSize:15,padding:10}}>正确率:B</Tag>
+                  </div>
+                  <Map />
+                </div>
+              </div>
+            </div> */}
           </div>
         </SwiperSlide>
         <SwiperSlide>
