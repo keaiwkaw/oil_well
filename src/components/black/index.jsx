@@ -74,7 +74,7 @@ const Index = () => {
         placeholder="input search text"
         onSearch={(v) => { console.log(v); }}
       />
-      <Table columns={columns} dataSource={tableData} style={{ width: "100%", height: "100%" }} pagination={{ defaultPageSize: 9,total:total }} onChange />
+      <Table columns={columns} dataSource={tableData} style={{ width: "100%", height: "100%" }} pagination={{ defaultPageSize: 9,total:total,onChange:handlePageChange}} />
     </div>
   )
 }
