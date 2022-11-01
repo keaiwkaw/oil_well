@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom'
 import { Navigation } from 'swiper';
@@ -8,9 +8,6 @@ import { Line, Heatmap, Pie } from "@ant-design/plots";
 import Loading from '@/components/loading'
 import ReactECharts from 'echarts-for-react';
 import 'echarts-gl';
-
-// import meta from "./data.js"
-// import meta3d from "./res.js"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -140,59 +137,59 @@ const Index = () => {
     }
     setStackLine3d(
       {
-      tooltip: {},
-      visualMap: {
-        show: false,
-        dimension: 2,
-        min: 0,
-        max: 30,
-        inRange: {
-          color: [
-            '#313695',
-            '#4575b4',
-            '#74add1',
-            '#abd9e9',
-            '#e0f3f8',
-            '#ffffbf',
-            '#fee090',
-            '#fdae61',
-            '#f46d43',
-            '#d73027',
-            '#a50026'
-          ]
-        }
-      },
-      xAxis3D: {
-        type: 'value',
-        name: "时域信息"
-      },
-      yAxis3D: {
-        type: 'value',
-        name: "频域信息"
-      },
-      zAxis3D: {
-        type: 'value',
-        name: "时间频域信息"
-      },
-      grid3D: {
-        show: true,
-        boxWidth: 90,
-        boxHeight: 90,
-        boxDepth: 90,
-        viewControl: {
-          projection: 'orthographic'
-        }
-      },
-      series: [
-        {
-          type: 'line3D',
-          data: res,
-          lineStyle: {
-            width: 4
+        tooltip: {},
+        visualMap: {
+          show: false,
+          dimension: 2,
+          min: 0,
+          max: 30,
+          inRange: {
+            color: [
+              '#313695',
+              '#4575b4',
+              '#74add1',
+              '#abd9e9',
+              '#e0f3f8',
+              '#ffffbf',
+              '#fee090',
+              '#fdae61',
+              '#f46d43',
+              '#d73027',
+              '#a50026'
+            ]
           }
-        }
-      ]
-    })
+        },
+        xAxis3D: {
+          type: 'value',
+          name: "时域信息"
+        },
+        yAxis3D: {
+          type: 'value',
+          name: "频域信息"
+        },
+        zAxis3D: {
+          type: 'value',
+          name: "时间频域信息"
+        },
+        grid3D: {
+          show: true,
+          boxWidth: 90,
+          boxHeight: 90,
+          boxDepth: 90,
+          viewControl: {
+            projection: 'orthographic'
+          }
+        },
+        series: [
+          {
+            type: 'line3D',
+            data: res,
+            lineStyle: {
+              width: 4
+            }
+          }
+        ]
+      })
   }
   useEffect(() => {
     let p1 = fetch(`http://101.34.38.102:8186/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
@@ -219,7 +216,7 @@ const Index = () => {
     if (meta3d && meta3d.data) {
       changeStackLine3d()
     }
-  }, [meta,meta3d])
+  }, [meta, meta3d])
 
   const Map = () => {
     const [data, setData] = useState([]);
@@ -370,8 +367,8 @@ const Index = () => {
           <SwiperSlide>
             <div className='two-page page'>
               <DemoPie />
-            123
-          </div>
+              123
+            </div>
           </SwiperSlide>
         </Swiper >
       }

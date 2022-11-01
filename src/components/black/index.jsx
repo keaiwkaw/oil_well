@@ -18,6 +18,21 @@ const Index = () => {
 
   const columns = [
     {
+      title: '工作id',
+      dataIndex: 'id',
+      width: 200,
+    },
+    {
+      title: '稳定性时间',
+      dataIndex: 'stableRunningTime',
+      width: 200,
+    },
+    {
+      title: '正确率',
+      dataIndex: 'correctRate',
+      width: 200,
+    },
+    {
       title: '采气厂名称',
       dataIndex: 'factoryName',
       width: 200,
@@ -76,38 +91,46 @@ const Index = () => {
   return (
     <div className="c-home">
       <div className='c-search'>
-        采气厂名称:
-        <Input placeholder="采气厂名称" style={{ width: 250 }} onChange={(e) => {
-          const value = e.target.value
-          setInfo({
-            ...info,
-            factoryName: value
-          })
-        }} />
-        集气站名称:
-        <Input placeholder="集气站名称" style={{ width: 250 }} onChange={(e) => {
-          const value = e.target.value
-          setInfo({
-            ...info,
-            stationName: value
-          })
-        }} />
-        作业区名称:
-        <Input placeholder="作业区名称" style={{ width: 250 }} onChange={(e) => {
-          const value = e.target.value
-          setInfo({
-            ...info,
-            workZoneName: value
-          })
-        }} />
-        油井编号:
-        <Input placeholder="油井编号" style={{ width: 250 }} onChange={(e) => {
-          const value = e.target.value
-          setInfo({
-            ...info,
-            wellName: value
-          })
-        }} />
+        <div className='c-input'>
+          采气厂名称:
+          <Input placeholder="采气厂名称" onChange={(e) => {
+            const value = e.target.value
+            setInfo({
+              ...info,
+              factoryName: value
+            })
+          }} />
+        </div>
+        <div className='c-input'>
+          集气站名称:
+          <Input placeholder="集气站名称" onChange={(e) => {
+            const value = e.target.value
+            setInfo({
+              ...info,
+              stationName: value
+            })
+          }} />
+        </div>
+        <div className='c-input'>
+          作业区名称:
+          <Input placeholder="作业区名称" onChange={(e) => {
+            const value = e.target.value
+            setInfo({
+              ...info,
+              workZoneName: value
+            })
+          }} />
+        </div>
+        <div className='c-input'>
+          油井编号:
+          <Input placeholder="油井编号" onChange={(e) => {
+            const value = e.target.value
+            setInfo({
+              ...info,
+              wellName: value
+            })
+          }} />
+        </div>
         <Button type="primary" onClick={() => {
           fetchTableData()
         }}>搜索</Button>
