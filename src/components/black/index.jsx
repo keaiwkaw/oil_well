@@ -26,11 +26,15 @@ const Index = () => {
       title: '稳定性时间',
       dataIndex: 'stableRunningTime',
       width: 200,
+      render: (_,record) => {
+        return Number(record.stableRunningTime).toFixed(2)
+      }
     },
     {
       title: '正确率',
       dataIndex: 'correctRate',
       width: 200,
+      render: (_,record) => Number(record.correctRate).toFixed(2)
     },
     {
       title: '采气厂名称',
@@ -74,7 +78,6 @@ const Index = () => {
       pageSize: 9,
       ...info
     }
-    console.log(req);
     fetch(queryGetParams('http://101.34.38.102:8186/api/tasks', req), {
       method: "GET"
     }).then(response => response.json()).then(res => {
