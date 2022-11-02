@@ -61,7 +61,7 @@ const Index = () => {
       width: 200,
       render: (row, record) => (
         <Space size="middle">
-          <Link to={`/mine/${row.wellId}`}>查看详情</Link>
+          <Link to={`/mine/${row.wellId}/${row.id}`}>查看详情</Link>
         </Space>
       ),
     },

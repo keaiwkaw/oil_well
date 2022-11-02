@@ -3,5 +3,5 @@ import Swiper from "@/components/swiper";
 
 export const routeConfig = [
   { path: "/", element: <Black /> },
-  { path: "/mine/:id", element: <Swiper /> },
+  { path: "/mine/:id/:taskid", element: <Swiper /> },
 ];

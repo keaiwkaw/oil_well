@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Tag } from 'antd';
-import { Line, Heatmap, Pie } from "@ant-design/plots";
+import { Line } from "@ant-design/plots";
 import Loading from '@/components/loading'
 import ReactECharts from 'echarts-for-react';
 import 'echarts-gl';
@@ -24,6 +24,22 @@ const Index = () => {
   const [stackLine3Data, setStackLine3Data] = useState(null)
   const [stackLine4Data, setStackLine4Data] = useState(null)
   const [stackLine3d, setStackLine3d] = useState(null)
+
+  const [rate, setRate] = useState({
+    correctRate: 0,
+    stableRunningTime: 0
+  })
+
+  const [meta2_1Data, setMeta2_1Data] = useState(null)
+  const [stackLine2_1Data, setStackLine2_1Data] = useState(null)
+
+  const [meta2_2Data, setMeta2_2Data] = useState(null)
+  const [stackLine2_2Data, setStackLine2_2Data] = useState(null)
+  const [stackLine2_3Data, setStackLine2_3Data] = useState(null)
+
+  const [meta2_3Data, setMeta2_3Data] = useState(null)
+  const [stackLine2_4Data, setStackLine2_4Data] = useState(null)
+  const [stackLine2_5Data, setStackLine2_5Data] = useState(null)
   const changeLine1Data = () => {
     const res = []
     const len = meta.data.originBpi.length
@@ -31,22 +47,22 @@ const Index = () => {
       const bpi = {
         day: i + 1,
         value: meta.data.originBpi[i],
-        category: "原始套压Mpa"
+        category: "套压"
       }
       const pi = {
         day: i + 1,
         value: meta.data.originPi[i],
-        category: "原始油压Mpa"
+        category: "油压"
       }
       const zuv = {
         day: i + 1,
         value: meta.data.originZuv[i],
-        category: "原始状态"
+        category: "开关井状态"
       }
       const scms = {
         day: i + 1,
         value: meta.data.originScms[i],
-        category: "原始生产制度"
+        category: "生产制度"
       }
       res.push(bpi, pi, zuv, scms)
     }
@@ -65,7 +81,7 @@ const Index = () => {
       const bpiSubBi = {
         day: i + 1,
         value: meta.data.originBpiSubBi[i],
-        category: "原始bpi-原始bi"
+        category: "油套压差"
       }
       res.push(bpiSubBi)
     }
@@ -77,7 +93,6 @@ const Index = () => {
       color: ['#1979C9'],
     })
   }
-
   const changeLine3Data = () => {
     const res = []
     const len1 = meta.data.fftBpi.x.length
@@ -85,7 +100,7 @@ const Index = () => {
       const fftBpi = {
         x: meta.data.fftBpi.x[i],
         y: meta.data.fftBpi.y[i],
-        category: "傅里叶变换后的Bpi模型"
+        category: "油压傅立叶变换数据"
       }
       res.push(fftBpi)
     }
@@ -94,7 +109,7 @@ const Index = () => {
       const fftPi = {
         x: meta.data.fftPi.x[i],
         y: meta.data.fftPi.y[i],
-        category: "傅里叶变换后的Pi模型"
+        category: "套压傅立叶变换数据"
       }
       res.push(fftPi)
     }
@@ -113,7 +128,7 @@ const Index = () => {
       const fftBpiSubPi = {
         x: meta.data.fftBpiSubPi.x[i],
         y: meta.data.fftBpiSubPi.y[i],
-        category: "傅里叶变换后的Bpi-Pi模型"
+        category: "油套压差傅立叶变换数据"
       }
       res.push(fftBpiSubPi)
     }
@@ -191,15 +206,125 @@ const Index = () => {
         ]
       })
   }
+  const changeLine2_1Data = () => {
+    const res = []
+    const len = meta2_1Data.data.length
+    for (let i = 0; i < len; i++) {
+      const data = {
+        day: i + 1,
+        value: meta2_1Data.data[i],
+        category: "权重"
+      }
+      res.push(data)
+    }
+    setStackLine2_1Data({
+      data: res,
+      xField: 'day',
+      yField: 'value',
+      seriesField: 'category',
+      color: ['#1979C9'],
+    })
+  }
+  const changeLine2_2Data = () => {
+    const res = []
+    const len = meta2_2Data.data.CONV3.length
+    for (let i = 0; i < len; i++) {
+      const data = {
+        day: i + 1,
+        value: meta2_2Data.data.CONV3[i],
+        category: "权重"
+      }
+      res.push(data)
+    }
+    setStackLine2_2Data({
+      data: res,
+      xField: 'day',
+      yField: 'value',
+      seriesField: 'category',
+      color: ['#1979C9'],
+    })
+  }
+  const changeLine2_3Data = () => {
+    const res = []
+    const len = meta2_2Data.data.CONV4.length
+    for (let i = 0; i < len; i++) {
+      const data = {
+        day: i + 1,
+        value: meta2_2Data.data.CONV4[i],
+        category: "权重"
+      }
+      res.push(data)
+    }
+    setStackLine2_3Data({
+      data: res,
+      xField: 'day',
+      yField: 'value',
+      seriesField: 'category',
+      color: ['#1979C9'],
+    })
+  }
+  const changeLine2_4Data = () => {
+    const res = []
+    const len = meta2_3Data.data.CONV3.length
+    for (let i = 0; i < len; i++) {
+      const data = {
+        day: i + 1,
+        value: meta2_3Data.data.CONV3[i],
+        category: "权重"
+      }
+      res.push(data)
+    }
+    setStackLine2_4Data({
+      data: res,
+      xField: 'day',
+      yField: 'value',
+      seriesField: 'category',
+      color: ['#1979C9'],
+    })
+  }
+  const changeLine2_5Data = () => {
+    const res = []
+    const len = meta2_3Data.data.CONV4.length
+    for (let i = 0; i < len; i++) {
+      const data = {
+        day: i + 1,
+        value: meta2_3Data.data.CONV4[i],
+        category: "权重"
+      }
+      res.push(data)
+    }
+    setStackLine2_5Data({
+      data: res,
+      xField: 'day',
+      yField: 'value',
+      seriesField: 'category',
+      color: ['#1979C9'],
+    })
+  }
   useEffect(() => {
     let p1 = fetch(`http://101.34.38.102:8186/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
       setMeta(res)
     }).then(_ => true)
     let p2 = fetch(`http://101.34.38.102:8186/api/pictures/stft/${params.id}`).then(res => res.json()).then(res => {
-      setMeta3d(res.data)
+      setMeta3d(res)
+    }).then(_ => true)
+    let p3 = fetch(`http://101.34.38.102:8186/api/pictures/heat-map/${params.id}`).then(res => res.json()).then(res => {
+      setMeta2_1Data(res)
+    }).then(_ => true)
+    let p4 = fetch(`http://101.34.38.102:8186/api/pictures/stable-running-time/${params.id}`).then(res => res.json()).then(res => {
+      setMeta2_2Data(res)
+    }).then(_ => true)
+    let p5 = fetch(`http://101.34.38.102:8186/api/pictures/correct-rate/${params.id}`).then(res => res.json()).then(res => {
+      setMeta2_3Data(res)
+    }).then(_ => true)
+    let p6 = fetch(`http://101.34.38.102:8186/api/pictures/rate-and-time/${params.taskid}`).then(res => res.json()).then(res => {
+      setRate({
+        stableRunningTime: res.data.stableRunningTime.toFixed(2),
+        correctRate: res.data.correctRate.toFixed(2)
+      })
     }).then(_ => true)
     Promise.all([
-      p1, p2
+      p1, p2, p3, p4, p5, p6
     ]).then(values => {
       if (values.every(i => i == true)) {
         setLoading(false)
@@ -216,93 +341,18 @@ const Index = () => {
     if (meta3d && meta3d.data) {
       changeStackLine3d()
     }
-  }, [meta, meta3d])
-
-  const Map = () => {
-    const [data, setData] = useState([]);
-    useEffect(() => {
-      asyncFetch();
-    }, []);
-    const asyncFetch = () => {
-      fetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/heatmap.json')
-        .then((response) => response.json())
-        .then((json) => setData(json))
-        .catch((error) => {
-          console.log('fetch data failed', error);
-        });
-    };
-    const config = {
-      data,
-      type: 'density',
-      xField: 'g',
-      yField: 'l',
-      colorField: 'tmp',
-      color: '#F51D27-#FA541C-#FF8C12-#FFC838-#FAFFA8-#80FF73-#12CCCC-#1890FF-#6E32C2',
-      legend: {
-        position: 'bottom',
-      },
-      annotations: [
-        {
-          type: 'image',
-          start: ['min', 'max'],
-          end: ['max', 'min'],
-          src: 'https://gw.alipayobjects.com/zos/rmsportal/NeUTMwKtPcPxIFNTWZOZ.png',
-        },
-      ],
-    };
-
-    return <Heatmap {...config} />;
-  };
-  const DemoPie = () => {
-    const data = [
-      {
-        type: '分类一',
-        value: 27,
-      },
-      {
-        type: '分类二',
-        value: 25,
-      },
-      {
-        type: '分类三',
-        value: 18,
-      },
-      {
-        type: '分类四',
-        value: 15,
-      },
-      {
-        type: '分类五',
-        value: 10,
-      },
-      {
-        type: '其他',
-        value: 5,
-      },
-    ];
-    const config = {
-      appendPadding: 10,
-      data,
-      angleField: 'value',
-      colorField: 'type',
-      radius: 0.9,
-      label: {
-        type: 'inner',
-        offset: '-30%',
-        content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
-        style: {
-          fontSize: 14,
-          textAlign: 'center',
-        },
-      },
-      interactions: [
-        {
-          type: 'element-active',
-        },
-      ],
-    };
-    return <Pie {...config} />;
-  };
+    if (meta2_1Data && meta2_1Data.data) {
+      changeLine2_1Data()
+    }
+    if (meta2_2Data && meta2_2Data.data) {
+      changeLine2_2Data()
+      changeLine2_3Data()
+    }
+    if (meta2_3Data && meta2_3Data.data) {
+      changeLine2_4Data()
+      changeLine2_5Data()
+    }
+  }, [meta, meta3d, meta2_1Data, meta2_3Data])
   return (
     <div className="c-swiper" >
       {
@@ -339,35 +389,42 @@ const Index = () => {
                   <div className='title'>时频图</div>
                   <div className='stack-line3D'>{stackLine3d ? <ReactECharts option={stackLine3d} style={{ height: 600 }} /> : null}</div>
                 </div>
-                <div className='content'>
-                  <div className='title'>指标评价</div>
-                  <div className='heat-map'>
-                    <div className='rate'>
-                      <Tag color='success' style={{ fontSize: 15, padding: 10 }}>稳定性时间:A</Tag>
-                      <Tag color='success' style={{ fontSize: 15, padding: 10 }}>正确率:B</Tag>
-                    </div>
-                    <Map />
-                  </div>
-                </div>
               </div>
-              {/* <div className="content-flex">
-              <div className='content'>
-                <div className='title'>指标评价</div>
-                <div className='heat-map'>
-                  <div className='rate'>
-                    <Tag color='success' style={{fontSize:15,padding:10}}>稳定性时间:A</Tag>
-                    <Tag color='success' style={{fontSize:15,padding:10}}>正确率:B</Tag>
-                  </div>
-                  <Map />
-                </div>
-              </div>
-            </div> */}
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className='two-page page'>
-              <DemoPie />
-              123
+              <div className='content-flex'>
+                <div className='content'>
+                  <div className='title'>热力图</div>
+                  <div className='heat-map'>
+                    <div className='rate'>
+                      <Tag color='success' style={{ fontSize: 15, padding: 10 }}>稳定性时间:{rate.stableRunningTime}</Tag>
+                      <Tag color='success' style={{ fontSize: 15, padding: 10 }}>正确率:{rate.correctRate}</Tag>
+                    </div>
+                    {stackLine2_1Data ? <Line {...stackLine2_1Data} /> : null}</div>
+                </div>
+              </div>
+              <div className='content-flex'>
+                <div className='content'>
+                  <div className='title'>稳定运行时间：神经网络第三层</div>
+                  <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
+                </div>
+                <div className='content'>
+                  <div className='title'>稳定运行时间：神经网络第四层</div>
+                  <div className='stack-line'>{stackLine2_3Data ? <Line {...stackLine2_3Data} /> : null}</div>
+                </div>
+              </div>
+              <div className='content-flex'>
+                <div className='content'>
+                  <div className='title'>正确率：神经网络第三层</div>
+                  <div className='stack-line'>{stackLine2_4Data ? <Line {...stackLine2_4Data} /> : null}</div>
+                </div>
+                <div className='content'>
+                  <div className='title'>正确率：神经网络第四层</div>
+                  <div className='stack-line'>{stackLine2_5Data ? <Line {...stackLine2_5Data} /> : null}</div>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         </Swiper >
