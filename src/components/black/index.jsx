@@ -26,7 +26,7 @@ const Index = () => {
       title: '稳定性时间',
       dataIndex: 'stableRunningTime',
       width: 200,
-      render: (_,record) => {
+      render: (_, record) => {
         return Number(record.stableRunningTime).toFixed(2)
       }
     },
@@ -34,7 +34,7 @@ const Index = () => {
       title: '正确率',
       dataIndex: 'correctRate',
       width: 200,
-      render: (_,record) => Number(record.correctRate).toFixed(2)
+      render: (_, record) => Number(record.correctRate).toFixed(2)
     },
     {
       title: '采气厂名称',
@@ -91,52 +91,32 @@ const Index = () => {
   const handlePageChange = (pagination) => {
     fetchTableData(pagination)
   }
+
+  const handleSearch = () => {
+    fetchTableData()
+  }
+  const handleChangeInputValue = (e) => {
+    const { name, value } = e.target;
+
+    setInfo({
+      ...info,
+      [name]: value
+    })
+  }
   return (
     <div className="c-home">
       <div className='c-search'>
-        <div className='c-input'>
-          采气厂名称:
-          <Input placeholder="采气厂名称" onChange={(e) => {
-            const value = e.target.value
-            setInfo({
-              ...info,
-              factoryName: value
-            })
-          }} />
-        </div>
-        <div className='c-input'>
-          集气站名称:
-          <Input placeholder="集气站名称" onChange={(e) => {
-            const value = e.target.value
-            setInfo({
-              ...info,
-              stationName: value
-            })
-          }} />
-        </div>
-        <div className='c-input'>
-          作业区名称:
-          <Input placeholder="作业区名称" onChange={(e) => {
-            const value = e.target.value
-            setInfo({
-              ...info,
-              workZoneName: value
-            })
-          }} />
-        </div>
-        <div className='c-input'>
-          油井编号:
-          <Input placeholder="油井编号" onChange={(e) => {
-            const value = e.target.value
-            setInfo({
-              ...info,
-              wellName: value
-            })
-          }} />
-        </div>
-        <Button type="primary" onClick={() => {
-          fetchTableData()
-        }}>搜索</Button>
+        {
+          [{ factoryName: '采气厂名称' }, { stationName: '集气站名称' }, { workZoneName: '作业区名称' }, { wellName: '油井编号' }].map(i => {
+            const k = Object.keys(i)[0];
+            const v = i[k]
+            return (<div className='c-input'>
+              {v}:
+              <Input placeholder={v} onChange={handleChangeInputValue} name={k} />
+            </div>)
+          })
+        }
+        <Button type="primary" onClick={handleSearch}>搜索</Button>
       </div>
       <Table columns={columns} dataSource={tableData} pagination={{ defaultPageSize: 9, total: total, onChange: handlePageChange }} />
     </div>
