@@ -213,16 +213,40 @@ const Index = () => {
       const data = {
         day: i + 1,
         value: meta2_1Data.data[i],
-        category: "权重"
+        category: ""
       }
       res.push(data)
+    }
+    const len2 = meta.data.originBpi.length
+    for (let i = 0; i < len2; i++) {
+      const bpi = {
+        day: i + 1,
+        value: meta.data.originBpi[i],
+        category: "套压"
+      }
+      const pi = {
+        day: i + 1,
+        value: meta.data.originPi[i],
+        category: "油压"
+      }
+      const zuv = {
+        day: i + 1,
+        value: meta.data.originZuv[i],
+        category: "开关井状态"
+      }
+      const scms = {
+        day: i + 1,
+        value: meta.data.originScms[i],
+        category: "生产制度"
+      }
+      res.push(bpi, pi, zuv, scms)
     }
     setStackLine2_1Data({
       data: res,
       xField: 'day',
       yField: 'value',
       seriesField: 'category',
-      color: ['#1979C9'],
+      color: ['#1979C9', '#D62A0D', '#FAA219',"#000","green"],
     })
   }
   const changeLine2_2Data = () => {
@@ -232,7 +256,7 @@ const Index = () => {
       const data = {
         day: i + 1,
         value: meta2_2Data.data.CONV3[i],
-        category: "权重"
+        category: ""
       }
       res.push(data)
     }
@@ -251,7 +275,7 @@ const Index = () => {
       const data = {
         day: i + 1,
         value: meta2_2Data.data.CONV4[i],
-        category: "权重"
+        category: ""
       }
       res.push(data)
     }
@@ -270,7 +294,7 @@ const Index = () => {
       const data = {
         day: i + 1,
         value: meta2_3Data.data.CONV3[i],
-        category: "权重"
+        category: ""
       }
       res.push(data)
     }
@@ -289,7 +313,7 @@ const Index = () => {
       const data = {
         day: i + 1,
         value: meta2_3Data.data.CONV4[i],
-        category: "权重"
+        category: ""
       }
       res.push(data)
     }
@@ -341,7 +365,7 @@ const Index = () => {
     if (meta3d && meta3d.data) {
       changeStackLine3d()
     }
-    if (meta2_1Data && meta2_1Data.data) {
+    if (meta2_1Data && meta2_1Data.data && meta && meta.data) {
       changeLine2_1Data()
     }
     if (meta2_2Data && meta2_2Data.data) {
@@ -407,21 +431,21 @@ const Index = () => {
               </div>
               <div className='content-flex'>
                 <div className='content'>
-                  <div className='title'>稳定运行时间：神经网络第三层</div>
+                  <div className='title'>稳定运行时间：神经网络第三层可视化</div>
                   <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
                 </div>
                 <div className='content'>
-                  <div className='title'>稳定运行时间：神经网络第四层</div>
+                  <div className='title'>稳定运行时间：神经网络第四层可视化</div>
                   <div className='stack-line'>{stackLine2_3Data ? <Line {...stackLine2_3Data} /> : null}</div>
                 </div>
               </div>
               <div className='content-flex'>
                 <div className='content'>
-                  <div className='title'>正确率：神经网络第三层</div>
+                  <div className='title'>正确率：神经网络第三层可视化</div>
                   <div className='stack-line'>{stackLine2_4Data ? <Line {...stackLine2_4Data} /> : null}</div>
                 </div>
                 <div className='content'>
-                  <div className='title'>正确率：神经网络第四层</div>
+                  <div className='title'>正确率：神经网络第四层可视化</div>
                   <div className='stack-line'>{stackLine2_5Data ? <Line {...stackLine2_5Data} /> : null}</div>
                 </div>
               </div>
