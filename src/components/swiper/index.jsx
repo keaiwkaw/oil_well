@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Tag } from 'antd';
+import { Tag, Button, Select } from 'antd';
 import { Line } from "@ant-design/plots";
 import Loading from '@/components/loading'
 import ReactECharts from 'echarts-for-react';
@@ -246,7 +246,7 @@ const Index = () => {
       xField: 'day',
       yField: 'value',
       seriesField: 'category',
-      color: ['#1979C9', '#D62A0D', '#FAA219',"#000","green"],
+      color: ['#1979C9', '#D62A0D', '#FAA219', "#000", "green"],
     })
   }
   const changeLine2_2Data = () => {
@@ -325,6 +325,9 @@ const Index = () => {
       color: ['#1979C9'],
     })
   }
+  const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
   useEffect(() => {
     let p1 = fetch(`http://101.34.38.102:8186/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
       setMeta(res)
@@ -379,6 +382,27 @@ const Index = () => {
   }, [meta, meta3d, meta2_1Data, meta2_3Data])
   return (
     <div className="c-swiper" >
+      <div className='menu'>
+        <Select
+          defaultValue="auto"
+          style={{
+            width: 120,
+            margin:"0 20px"
+          }}
+          onChange={handleChange}
+          options={[
+            {
+              value: 'auto',
+              label: '均衡',
+            },
+            {
+              value: 'stable',
+              label: '稳定性优先',
+            },
+          ]}
+        />
+        <Button type="primary">单井效果</Button>
+      </div>
       {
         loading ? <Loading /> : <Swiper
           modules={[Navigation]}
@@ -386,36 +410,6 @@ const Index = () => {
           navigation
           style={{ height: '100%' }}
         >
-          <SwiperSlide>
-            <div className='one-page page'>
-              <div className='content-flex'>
-                <div className='content'>
-                  <div className='title'>油压套压原图</div>
-                  <div className='stack-line'>{stackLine1Data ? <Line {...stackLine1Data} /> : null}</div>
-                </div>
-                <div className='content'>
-                  <div className='title'>油压套压差图</div>
-                  <div className='stack-line'>{stackLine2Data ? <Line {...stackLine2Data} /> : null}</div>
-                </div>
-              </div>
-              <div className="content-flex">
-                <div className='content'>
-                  <div className='title'>油压套压FFT变换，频谱图</div>
-                  <div className='stack-line'>{stackLine3Data ? <Line {...stackLine3Data} /> : null}</div>
-                </div>
-                <div className='content'>
-                  <div className='title'>油套压差FFT变换，频谱图</div>
-                  <div className='stack-line'>{stackLine4Data ? <Line {...stackLine4Data} /> : null}</div>
-                </div>
-              </div>
-              <div className="content-flex">
-                <div className='content'>
-                  <div className='title'>时频图</div>
-                  <div className='stack-line3D'>{stackLine3d ? <ReactECharts option={stackLine3d} style={{ height: 600 }} /> : null}</div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
           <SwiperSlide>
             <div className='two-page page'>
               <div className='content-flex'>
@@ -447,6 +441,36 @@ const Index = () => {
                 <div className='content'>
                   <div className='title'>正确率：神经网络第四层可视化</div>
                   <div className='stack-line'>{stackLine2_5Data ? <Line {...stackLine2_5Data} /> : null}</div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className='one-page page'>
+              <div className='content-flex'>
+                <div className='content'>
+                  <div className='title'>油压套压原图</div>
+                  <div className='stack-line'>{stackLine1Data ? <Line {...stackLine1Data} /> : null}</div>
+                </div>
+                <div className='content'>
+                  <div className='title'>油压套压差图</div>
+                  <div className='stack-line'>{stackLine2Data ? <Line {...stackLine2Data} /> : null}</div>
+                </div>
+              </div>
+              <div className="content-flex">
+                <div className='content'>
+                  <div className='title'>油压套压FFT变换，频谱图</div>
+                  <div className='stack-line'>{stackLine3Data ? <Line {...stackLine3Data} /> : null}</div>
+                </div>
+                <div className='content'>
+                  <div className='title'>油套压差FFT变换，频谱图</div>
+                  <div className='stack-line'>{stackLine4Data ? <Line {...stackLine4Data} /> : null}</div>
+                </div>
+              </div>
+              <div className="content-flex">
+                <div className='content'>
+                  <div className='title'>时频图</div>
+                  <div className='stack-line3D'>{stackLine3d ? <ReactECharts option={stackLine3d} style={{ height: 600 }} /> : null}</div>
                 </div>
               </div>
             </div>

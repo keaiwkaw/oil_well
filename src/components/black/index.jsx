@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { queryGetParams } from "@/util"
-import { Space, Table, Input, Button } from 'antd';
+import { Space, Table, Input, Button, Select } from 'antd';
 
 import './index.less'
 
@@ -18,12 +18,39 @@ const Index = () => {
 
   const columns = [
     {
-      title: '工作id',
+      title: '序号',
       dataIndex: 'id',
       width: 200,
     },
     {
-      title: '稳定性时间',
+      title: '井号',
+      width: 200,
+      dataIndex: 'wellName',
+    },
+    {
+      title: '采气厂',
+      dataIndex: 'factoryName',
+      width: 200,
+    },
+    {
+      title: '作业区',
+      width: 200,
+      dataIndex: 'workZoneName',
+    },
+    {
+      title: '总分',
+      dataIndex: 'correctRate',
+      width: 200,
+      render: (_, record) => Number(record.correctRate).toFixed(2)
+    },
+    {
+      title: '正确率得分',
+      dataIndex: 'correctRate',
+      width: 200,
+      render: (_, record) => Number(record.correctRate).toFixed(2)
+    },
+    {
+      title: '稳定性时间得分',
       dataIndex: 'stableRunningTime',
       width: 200,
       render: (_, record) => {
@@ -31,30 +58,28 @@ const Index = () => {
       }
     },
     {
-      title: '正确率',
-      dataIndex: 'correctRate',
+      title: '排液效果得分',
+      dataIndex: 'stableRunningTime',
       width: 200,
-      render: (_, record) => Number(record.correctRate).toFixed(2)
+      render: (_, record) => {
+        return Number(record.stableRunningTime).toFixed(2)
+      }
     },
     {
-      title: '采气厂名称',
-      dataIndex: 'factoryName',
+      title: '压差得分',
+      dataIndex: 'stableRunningTime',
       width: 200,
+      render: (_, record) => {
+        return Number(record.stableRunningTime).toFixed(2)
+      }
     },
     {
-      title: '集气站名称',
+      title: '增气产量得分',
+      dataIndex: 'stableRunningTime',
       width: 200,
-      dataIndex: 'stationName',
-    },
-    {
-      title: '油井编号',
-      width: 200,
-      dataIndex: 'wellName',
-    },
-    {
-      title: '作业区名称',
-      width: 200,
-      dataIndex: 'workZoneName',
+      render: (_, record) => {
+        return Number(record.stableRunningTime).toFixed(2)
+      }
     },
     {
       title: '操作',
@@ -105,6 +130,26 @@ const Index = () => {
   }
   return (
     <div className="c-home">
+      <div className='menu'>
+        <Select
+          defaultValue="auto"
+          style={{
+            width: 120,
+            margin: "0 20px"
+          }}
+          options={[
+            {
+              value: 'auto',
+              label: '均衡',
+            },
+            {
+              value: 'stable',
+              label: '稳定性优先',
+            },
+          ]}
+        />
+        <Button type="primary">单井效果</Button>
+      </div>
       <div className='c-search'>
         {
           [{ factoryName: '采气厂名称' }, { stationName: '集气站名称' }, { workZoneName: '作业区名称' }, { wellName: '油井编号' }].map(i => {
