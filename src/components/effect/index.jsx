@@ -17,26 +17,26 @@ const Index = () => {
   })
 
   const columns = [
-    {
-      title: '序号',
-      dataIndex: 'id',
-      width: 200,
-    },
-    {
-      title: '井号',
-      width: 200,
-      dataIndex: 'wellName',
-    },
-    {
-      title: '采气厂',
-      dataIndex: 'factoryName',
-      width: 200,
-    },
-    {
-      title: '作业区',
-      width: 200,
-      dataIndex: 'workZoneName',
-    },
+    // {
+    //   title: '序号',
+    //   dataIndex: 'id',
+    //   width: 200,
+    // },
+    // {
+    //   title: '井号',
+    //   width: 200,
+    //   dataIndex: 'wellName',
+    // },
+    // {
+    //   title: '采气厂',
+    //   dataIndex: 'factoryName',
+    //   width: 200,
+    // },
+    // {
+    //   title: '作业区',
+    //   width: 200,
+    //   dataIndex: 'workZoneName',
+    // },
     {
       title: '总分',
       dataIndex: 'correctRate',
@@ -65,14 +65,14 @@ const Index = () => {
         return Number(record.stableRunningTime).toFixed(2)
       }
     },
-    {
-      title: '压差得分',
-      dataIndex: 'stableRunningTime',
-      width: 200,
-      render: (_, record) => {
-        return Number(record.stableRunningTime).toFixed(2)
-      }
-    },
+    // {
+    //   title: '压差得分',
+    //   dataIndex: 'stableRunningTime',
+    //   width: 200,
+    //   render: (_, record) => {
+    //     return Number(record.stableRunningTime).toFixed(2)
+    //   }
+    // },
     {
       title: '增气产量得分',
       dataIndex: 'stableRunningTime',
