@@ -44,13 +44,13 @@ const Index = () => {
       render: (_, record) => Number(record.correctRate).toFixed(2)
     },
     {
-      title: '正确率得分',
+      title: '正确率',
       dataIndex: 'correctRate',
       width: 200,
       render: (_, record) => Number(record.correctRate).toFixed(2)
     },
     {
-      title: '稳定性时间得分',
+      title: '稳定性时间',
       dataIndex: 'stableRunningTime',
       width: 200,
       render: (_, record) => {
@@ -58,7 +58,7 @@ const Index = () => {
       }
     },
     {
-      title: '排液效果得分',
+      title: '排液效果',
       dataIndex: 'stableRunningTime',
       width: 200,
       render: (_, record) => {
@@ -66,7 +66,7 @@ const Index = () => {
       }
     },
     // {
-    //   title: '压差得分',
+    //   title: '压差',
     //   dataIndex: 'stableRunningTime',
     //   width: 200,
     //   render: (_, record) => {
@@ -74,7 +74,7 @@ const Index = () => {
     //   }
     // },
     {
-      title: '增气产量得分',
+      title: '产气量',
       dataIndex: 'stableRunningTime',
       width: 200,
       render: (_, record) => {
