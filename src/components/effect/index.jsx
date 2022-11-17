@@ -17,31 +17,11 @@ const Index = () => {
   })
 
   const columns = [
-    // {
-    //   title: '序号',
-    //   dataIndex: 'id',
-    //   width: 200,
-    // },
-    // {
-    //   title: '井号',
-    //   width: 200,
-    //   dataIndex: 'wellName',
-    // },
-    // {
-    //   title: '采气厂',
-    //   dataIndex: 'factoryName',
-    //   width: 200,
-    // },
-    // {
-    //   title: '作业区',
-    //   width: 200,
-    //   dataIndex: 'workZoneName',
-    // },
     {
       title: '总分',
-      dataIndex: 'correctRate',
+      dataIndex: 'grade',
       width: 200,
-      render: (_, record) => Number(record.correctRate).toFixed(2)
+      render: (_, record) => Number(record.grade).toFixed(2)
     },
     {
       title: '正确率',
@@ -59,26 +39,18 @@ const Index = () => {
     },
     {
       title: '排液效果',
-      dataIndex: 'stableRunningTime',
+      dataIndex: 'drainageEffect',
       width: 200,
       render: (_, record) => {
-        return Number(record.stableRunningTime).toFixed(2)
+        return record.drainageEffect === 1 ? "有积液" : "无积液"
       }
     },
-    // {
-    //   title: '压差',
-    //   dataIndex: 'stableRunningTime',
-    //   width: 200,
-    //   render: (_, record) => {
-    //     return Number(record.stableRunningTime).toFixed(2)
-    //   }
-    // },
     {
       title: '产气量',
-      dataIndex: 'stableRunningTime',
+      dataIndex: 'gasProduction',
       width: 200,
       render: (_, record) => {
-        return Number(record.stableRunningTime).toFixed(2)
+        return Number(record.gasProduction).toFixed(2)
       }
     },
     {
