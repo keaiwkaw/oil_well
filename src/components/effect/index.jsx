@@ -103,24 +103,34 @@ const Index = () => {
   return (
     <div className="c-home">
       <div className='menu'>
-        <Select
-          defaultValue="auto"
-          style={{
-            width: 120,
-            margin: "0 20px"
-          }}
-          options={[
-            {
-              value: 'auto',
-              label: '均衡',
-            },
-            {
-              value: 'stable',
-              label: '稳定性优先',
-            },
-          ]}
-        />
-        <Button type="primary">单井效果</Button>
+        <div style={{
+          margin: "0 auto"
+        }}>
+          权重选择：
+          <Select
+            defaultValue="auto"
+            style={{
+              width: 120,
+            }}
+            options={[
+              {
+                value: 'auto',
+                label: '均衡',
+              },
+              {
+                value: 'stable',
+                label: '稳定性优先',
+              },
+            ]}
+          />
+        </div>
+        <div className='btn'>
+          <Button type="primary"
+            style={{
+              marginRight: "20px"
+            }}>总体效果</Button>
+          <Button type="primary">单井效果</Button>
+        </div>
       </div>
       <div className='c-search'>
         {
