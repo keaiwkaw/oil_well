@@ -5,7 +5,7 @@ import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Table, Tag } from 'antd';
-import { Line } from "@ant-design/plots";
+import { Line, Scatter } from "@ant-design/plots";
 
 import Loading from '@/components/loading'
 import 'echarts-gl';
@@ -206,27 +206,23 @@ const AllSingle = () => {
                         <div className='two-page page'>
                             <div className='content-flex'>
                                 <div className='content'>
-                                    <div className='title'>稳定运行时间：神经网络第三层可视化</div>
-                                    <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
-                                </div>
-                                <div className='content'>
-                                    <div className='title'>稳定运行时间：神经网络第四层可视化</div>
-                                    <div className='stack-line'>{stackLine2_3Data ? <Line {...stackLine2_3Data} /> : null}</div>
+                                    <div className='title'>总分</div>
+                                    <div className='all-scatter'>{stackLine2_2Data ? <Scatter {...stackLine2_2Data} /> : null}</div>
                                 </div>
                             </div>
                             <div className='content-flex'>
                                 <div className='content'>
-                                    <div className='title'>正确率：神经网络第三层可视化</div>
-                                    <div className='stack-line'>{stackLine2_4Data ? <Line {...stackLine2_4Data} /> : null}</div>
+                                    <div className='title'>正确率</div>
+                                    <div className='stack-scatter'>{stackLine2_4Data ? <Scatter {...stackLine2_4Data} /> : null}</div>
                                 </div>
                                 <div className='content'>
-                                    <div className='title'>正确率：神经网络第四层可视化</div>
-                                    <div className='stack-line'>{stackLine2_5Data ? <Line {...stackLine2_5Data} /> : null}</div>
+                                    <div className='title'>稳定运行时间</div>
+                                    <div className='stack-scatter'>{stackLine2_5Data ? <Scatter {...stackLine2_5Data} /> : null}</div>
                                 </div>
                             </div>
                             <div className='content-flex'>
                                 <div className='content'>
-                                    <div className='title'>总体分值</div>
+                                    <div className='title'>总体和子项的分值</div>
                                     <Table className='table' columns={columns} dataSource={data} pagination={false} />
                                 </div>
                             </div>
