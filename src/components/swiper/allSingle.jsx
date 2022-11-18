@@ -5,7 +5,7 @@ import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Table, Tag } from 'antd';
-import { Line, Scatter } from "@ant-design/plots";
+import { Scatter } from "@ant-design/plots";
 
 import Loading from '@/components/loading'
 import 'echarts-gl';
@@ -84,7 +84,6 @@ const AllSingle = () => {
 
     const [meta2_2Data, setMeta2_2Data] = useState(null)
     const [stackLine2_2Data, setStackLine2_2Data] = useState(null)
-    const [stackLine2_3Data, setStackLine2_3Data] = useState(null)
 
     const [meta2_3Data, setMeta2_3Data] = useState(null)
     const [stackLine2_4Data, setStackLine2_4Data] = useState(null)
@@ -104,27 +103,9 @@ const AllSingle = () => {
             data: res,
             xField: 'day',
             yField: 'value',
-            seriesField: 'category',
-            color: ['#1979C9'],
-        })
-    }
-    const changeLine2_3Data = () => {
-        const res = []
-        const len = meta2_2Data.data.CONV4.length
-        for (let i = 0; i < len; i++) {
-            const data = {
-                day: i + 1,
-                value: meta2_2Data.data.CONV4[i],
-                category: ""
-            }
-            res.push(data)
-        }
-        setStackLine2_3Data({
-            data: res,
-            xField: 'day',
-            yField: 'value',
-            seriesField: 'category',
-            color: ['#1979C9'],
+            shape: 'circle',
+            color: "#1979C9"
+
         })
     }
     const changeLine2_4Data = () => {
@@ -142,8 +123,8 @@ const AllSingle = () => {
             data: res,
             xField: 'day',
             yField: 'value',
-            seriesField: 'category',
-            color: ['#1979C9'],
+            shape: 'circle',
+            color: "#1979C9"
         })
     }
     const changeLine2_5Data = () => {
@@ -161,8 +142,8 @@ const AllSingle = () => {
             data: res,
             xField: 'day',
             yField: 'value',
-            seriesField: 'category',
-            color: ['#1979C9'],
+            shape: 'circle',
+            color: "#1979C9"
         })
     }
     useEffect(() => {
@@ -186,7 +167,6 @@ const AllSingle = () => {
     useEffect(() => {
         if (meta2_2Data && meta2_2Data.data) {
             changeLine2_2Data()
-            changeLine2_3Data()
         }
         if (meta2_3Data && meta2_3Data.data) {
             changeLine2_4Data()
