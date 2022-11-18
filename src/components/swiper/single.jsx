@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Tag, Button } from 'antd';
+import { Tag } from 'antd';
 import { Line } from "@ant-design/plots";
 import Loading from '@/components/loading'
 import ReactECharts from 'echarts-for-react';
