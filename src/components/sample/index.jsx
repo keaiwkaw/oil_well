@@ -1,8 +1,19 @@
-import { Table, Button, DatePicker, Select, Modal, Progress } from "antd";
+import {
+  Table,
+  Button,
+  DatePicker,
+  Select,
+  Modal,
+  Progress,
+  Popover,
+  Input,
+} from "antd";
 import { useState } from "react";
 const { RangePicker } = DatePicker;
 // import { QuestionCircleOutlined } from "@ant-design/icons";
 import "./index.less";
+
+const { Search } = Input;
 
 const Sample = () => {
   const columns = [
@@ -162,6 +173,9 @@ const Sample = () => {
   const [analyzeModalVisible, setAnalyzeModalVisible] = useState(false);
 
   const [explainModalVisible, setExplainModalVisible] = useState(false);
+
+  const [popoverVisible, setPopoverVisible] = useState(false);
+
   const handlePageChange = () => {};
   const handleCloseExplainModal = () => {
     setExplainModalVisible(false);
@@ -181,8 +195,34 @@ const Sample = () => {
       return "c-table-grey";
     }
   };
+
+  const handleRangeTimeChange = (dates) => {
+    console.log(dates);
+  };
+
+  const handleOpenSearchWell = () => {
+    setPopoverVisible(true);
+  };
+
+  const fetchWellById = (value) => {
+    console.log(value);
+    fetch("http://101.34.38.102:8000/api/getBaseData", {
+      method:"POST",
+      body:JSON.stringify({
+        pageNo:1,
+        wellId
+      })
+    });
+  };
   const total = 5;
 
+  const SearchNode = (
+    <Search
+      placeholder="输入井的ID"
+      onSearch={fetchWellById}
+      style={{ width: 200 }}
+    />
+  );
   return (
     <div className="c-sample">
       <Modal
@@ -249,7 +289,7 @@ const Sample = () => {
           </div>
           <div className="c-sample-header-input-time">
             <span className="c-sample-header-input-text"> 默认起止时间</span>
-            <RangePicker />
+            <RangePicker onChange={handleRangeTimeChange} />
           </div>
         </div>
         <div className="c-sample-header-btn">
@@ -270,7 +310,16 @@ const Sample = () => {
         }}
         rowClassName={setRowColor}
       />
-      <Button type="primary">添加新样本</Button>
+
+      <Popover
+        type="primary"
+        content={SearchNode}
+        trigger="click"
+        open={popoverVisible}
+        onOpenChange={handleOpenSearchWell}
+      >
+        <Button type="primary">添加新样本</Button>
+      </Popover>
     </div>
   );
 };
