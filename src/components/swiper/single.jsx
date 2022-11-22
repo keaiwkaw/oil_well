@@ -399,40 +399,6 @@ const Single = () => {
                                         {stackLine2_1Data ? <Line {...stackLine2_1Data} /> : null}</div>
                                 </div>
                             </div>
-                            <div className='content-flex'>
-                                <div className='content'>
-                                    <div className='title'>稳定运行时间：神经网络第三层可视化</div>
-                                    <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
-                                </div>
-                                <div className='content'>
-                                    <div className='title'>稳定运行时间：神经网络第四层可视化</div>
-                                    <div className='stack-line'>{stackLine2_3Data ? <Line {...stackLine2_3Data} /> : null}</div>
-                                </div>
-                            </div>
-                            <div className='content-flex'>
-                                <div className='content'>
-                                    <div className='title'>正确率：神经网络第三层可视化</div>
-                                    <div className='stack-line'>{stackLine2_4Data ? <Line {...stackLine2_4Data} /> : null}</div>
-                                </div>
-                                <div className='content'>
-                                    <div className='title'>正确率：神经网络第四层可视化</div>
-                                    <div className='stack-line'>{stackLine2_5Data ? <Line {...stackLine2_5Data} /> : null}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className='one-page page'>
-                            <div className='content-flex'>
-                                <div className='content'>
-                                    <div className='title'>油压套压原图</div>
-                                    <div className='stack-line'>{stackLine1Data ? <Line {...stackLine1Data} /> : null}</div>
-                                </div>
-                                <div className='content'>
-                                    <div className='title'>油压套压差图</div>
-                                    <div className='stack-line'>{stackLine2Data ? <Line {...stackLine2Data} /> : null}</div>
-                                </div>
-                            </div>
                             <div className="content-flex">
                                 <div className='content'>
                                     <div className='title'>油压套压FFT变换，频谱图</div>
@@ -443,6 +409,16 @@ const Single = () => {
                                     <div className='stack-line'>{stackLine4Data ? <Line {...stackLine4Data} /> : null}</div>
                                 </div>
                             </div>
+                            <div className='content-flex'>
+                                <div className='content'>
+                                    <div className='title'>油压套压差图</div>
+                                    <div className='stack-line'>{stackLine2Data ? <Line {...stackLine2Data} /> : null}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    {/* <SwiperSlide>
+                        <div className='one-page page'>
                             <div className="content-flex">
                                 <div className='content'>
                                     <div className='title'>时频图</div>
@@ -450,7 +426,7 @@ const Single = () => {
                                 </div>
                             </div>
                         </div>
-                    </SwiperSlide>
+                    </SwiperSlide> */}
                 </Swiper >
             }
         </div>
