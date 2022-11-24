@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from "path";
-
 export default defineConfig({
   plugins: [react()],
   css: {
@@ -18,5 +17,14 @@ export default defineConfig({
   },
   server: {
     port: 8888,
+    proxy: {
+      '/api': {
+        target: 'http://101.34.38.102:8186/',
+        changeOrigin: true,
+        // rewrite: (path) => path.replace(/^\/api/, '')
+      },
+    },
+
   },
+
 })
