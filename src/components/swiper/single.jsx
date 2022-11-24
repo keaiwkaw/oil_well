@@ -18,12 +18,8 @@ const Single = () => {
     const params = useParams();
     const [loading, setLoading] = useState(true)
     const [meta, setMeta] = useState(null)
-    const [meta3d, setMeta3d] = useState(null)
-    const [stackLine1Data, setStackLine1Data] = useState(null)
     const [stackLine2Data, setStackLine2Data] = useState(null)
     const [stackLine3Data, setStackLine3Data] = useState(null)
-    const [stackLine4Data, setStackLine4Data] = useState(null)
-    const [stackLine3d, setStackLine3d] = useState(null)
 
     const [rate, setRate] = useState({
         correctRate: 0,
@@ -31,50 +27,13 @@ const Single = () => {
     })
 
     const [meta2_1Data, setMeta2_1Data] = useState(null)
-    const [stackLine2_1Data, setStackLine2_1Data] = useState(null)
-
     const [meta2_2Data, setMeta2_2Data] = useState(null)
+    const [meta2_3Data, setMeta2_3Data] = useState(null)
+
+    const [stackLine2_1Data, setStackLine2_1Data] = useState(null)
     const [stackLine2_2Data, setStackLine2_2Data] = useState(null)
     const [stackLine2_3Data, setStackLine2_3Data] = useState(null)
-
-    const [meta2_3Data, setMeta2_3Data] = useState(null)
-    const [stackLine2_4Data, setStackLine2_4Data] = useState(null)
-    const [stackLine2_5Data, setStackLine2_5Data] = useState(null)
     const changeLine1Data = () => {
-        const res = []
-        const len = meta.data.originBpi.length
-        for (let i = 0; i < len; i++) {
-            const bpi = {
-                day: i + 1,
-                value: meta.data.originBpi[i],
-                category: "套压"
-            }
-            const pi = {
-                day: i + 1,
-                value: meta.data.originPi[i],
-                category: "油压"
-            }
-            const zuv = {
-                day: i + 1,
-                value: meta.data.originZuv[i],
-                category: "开关井状态"
-            }
-            const scms = {
-                day: i + 1,
-                value: meta.data.originScms[i],
-                category: "生产制度"
-            }
-            res.push(bpi, pi, zuv, scms)
-        }
-        setStackLine1Data({
-            data: res,
-            xField: 'day',
-            yField: 'value',
-            seriesField: 'category',
-            color: ['#1979C9', '#D62A0D', '#FAA219'],
-        })
-    }
-    const changeLine2Data = () => {
         const res = []
         const len = meta.data.originBpiSubBi.length
         for (let i = 0; i < len; i++) {
@@ -93,7 +52,7 @@ const Single = () => {
             color: ['#1979C9'],
         })
     }
-    const changeLine3Data = () => {
+    const changeLine2Data = () => {
         const res = []
         const len1 = meta.data.fftBpi.x.length
         for (let i = 0; i < len1; i++) {
@@ -118,93 +77,8 @@ const Single = () => {
             xField: 'x',
             yField: 'y',
             seriesField: 'category',
-            color: ['#1979C9'],
+            color: ['#1979C9', '#D62A0D'],
         })
-    }
-    const changeLine4Data = () => {
-        const res = []
-        const len1 = meta.data.fftBpiSubPi.x.length
-        for (let i = 0; i < len1; i++) {
-            const fftBpiSubPi = {
-                x: meta.data.fftBpiSubPi.x[i],
-                y: meta.data.fftBpiSubPi.y[i],
-                category: "油套压差傅立叶变换数据"
-            }
-            res.push(fftBpiSubPi)
-        }
-        setStackLine4Data({
-            data: res,
-            xField: 'x',
-            yField: 'y',
-            seriesField: 'category',
-            color: ['#1979C9'],
-        })
-    }
-    const changeStackLine3d = () => {
-        const res = []
-        let len1 = meta3d.data.FrequencyDomain.length
-        for (let i = 0; i < len1; i++) {
-            let len2 = meta3d.data.FrequencyDomain[i].length
-            for (let j = 0; j < len2; j++) {
-                let arr = [meta3d.data.timeDomain[i][j], meta3d.data.FrequencyDomain[i][j], meta3d.data.timeFrequencyDomain[i][j]]
-                res.push(arr)
-            }
-        }
-        setStackLine3d(
-            {
-                tooltip: {},
-                visualMap: {
-                    show: false,
-                    dimension: 2,
-                    min: 0,
-                    max: 30,
-                    inRange: {
-                        color: [
-                            '#313695',
-                            '#4575b4',
-                            '#74add1',
-                            '#abd9e9',
-                            '#e0f3f8',
-                            '#ffffbf',
-                            '#fee090',
-                            '#fdae61',
-                            '#f46d43',
-                            '#d73027',
-                            '#a50026'
-                        ]
-                    }
-                },
-                xAxis3D: {
-                    type: 'value',
-                    name: "时域信息"
-                },
-                yAxis3D: {
-                    type: 'value',
-                    name: "频域信息"
-                },
-                zAxis3D: {
-                    type: 'value',
-                    name: "时间频域信息"
-                },
-                grid3D: {
-                    show: true,
-                    boxWidth: 90,
-                    boxHeight: 90,
-                    boxDepth: 90,
-                    viewControl: {
-                        projection: 'orthographic'
-                    }
-                },
-                series: [
-                    {
-                        type: 'line3D',
-                        data: res,
-                        lineStyle: {
-                            width: 4
-                        }
-                    }
-                ]
-            })
     }
     const changeLine2_1Data = () => {
         const res = []
@@ -251,104 +125,97 @@ const Single = () => {
     }
     const changeLine2_2Data = () => {
         const res = []
-        const len = meta2_2Data.data.CONV3.length
-        for (let i = 0; i < len; i++) {
-            const data = {
+        console.log(meta2_2Data);
+        const len1 = meta2_2Data.data.bpi.length
+        for (let i = 0; i < len1; i++) {
+            const bpi = {
                 day: i + 1,
-                value: meta2_2Data.data.CONV3[i],
-                category: ""
+                value: meta2_2Data.data.bpi[i],
+                category: "套压"
             }
-            res.push(data)
+            res.push(bpi)
+        }
+        const len2 = meta2_2Data.data.pi.length
+        for (let i = 0; i < len2; i++) {
+            const pi = {
+                day: i + 1,
+                value: meta2_2Data.data.pi[i],
+                category: "油压"
+            }
+            res.push(pi)
         }
         setStackLine2_2Data({
             data: res,
             xField: 'day',
             yField: 'value',
             seriesField: 'category',
-            color: ['#1979C9'],
+            color: ['#1979C9', '#D62A0D'],
         })
     }
     const changeLine2_3Data = () => {
         const res = []
-        const len = meta2_2Data.data.CONV4.length
+        const len = meta2_1Data.data.length
         for (let i = 0; i < len; i++) {
             const data = {
                 day: i + 1,
-                value: meta2_2Data.data.CONV4[i],
+                value: meta2_1Data.data[i],
                 category: ""
             }
             res.push(data)
         }
-        setStackLine2_3Data({
-            data: res,
-            xField: 'day',
-            yField: 'value',
-            seriesField: 'category',
-            color: ['#1979C9'],
-        })
-    }
-    const changeLine2_4Data = () => {
-        const res = []
-        const len = meta2_3Data.data.CONV3.length
-        for (let i = 0; i < len; i++) {
-            const data = {
+        const len2 = meta.data.originBpi.length
+        for (let i = 0; i < len2; i++) {
+            const bpi = {
                 day: i + 1,
-                value: meta2_3Data.data.CONV3[i],
-                category: ""
+                value: meta.data.originBpi[i],
+                category: "套压"
             }
-            res.push(data)
-        }
-        setStackLine2_4Data({
-            data: res,
-            xField: 'day',
-            yField: 'value',
-            seriesField: 'category',
-            color: ['#1979C9'],
-        })
-    }
-    const changeLine2_5Data = () => {
-        const res = []
-        const len = meta2_3Data.data.CONV4.length
-        for (let i = 0; i < len; i++) {
-            const data = {
+            const pi = {
                 day: i + 1,
-                value: meta2_3Data.data.CONV4[i],
-                category: ""
+                value: meta.data.originPi[i],
+                category: "油压"
             }
-            res.push(data)
+            const zuv = {
+                day: i + 1,
+                value: meta.data.originZuv[i],
+                category: "开关井状态"
+            }
+            const scms = {
+                day: i + 1,
+                value: meta.data.originScms[i],
+                category: "生产制度"
+            }
+            res.push(bpi, pi, zuv, scms)
         }
-        setStackLine2_5Data({
+        setStackLine2_1Data({
             data: res,
             xField: 'day',
             yField: 'value',
             seriesField: 'category',
-            color: ['#1979C9'],
+            color: ['#1979C9', '#D62A0D', '#FAA219', "#000", "green"],
         })
     }
     useEffect(() => {
         let p1 = fetch(`${baseUrl}/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
             setMeta(res)
         }).then(_ => true)
-        let p2 = fetch(`${baseUrl}/api/pictures/stft/${params.id}`).then(res => res.json()).then(res => {
-            setMeta3d(res)
-        }).then(_ => true)
-        let p3 = fetch(`${baseUrl}/api/pictures/heat-map/${params.id}`).then(res => res.json()).then(res => {
+        let p2 = fetch(`${baseUrl}/api/pictures/heat-map/${params.id}`).then(res => res.json()).then(res => {
             setMeta2_1Data(res)
         }).then(_ => true)
-        let p4 = fetch(`${baseUrl}/api/pictures/stable-running-time/${params.id}`).then(res => res.json()).then(res => {
-            setMeta2_2Data(res)
-        }).then(_ => true)
-        let p5 = fetch(`${baseUrl}/api/pictures/correct-rate/${params.id}`).then(res => res.json()).then(res => {
-            setMeta2_3Data(res)
-        }).then(_ => true)
-        let p6 = fetch(`${baseUrl}/api/pictures/rate-and-time/${params.taskid}`).then(res => res.json()).then(res => {
+        let p3 = fetch(`${baseUrl}/api/pictures/rate-and-time/${params.taskid}`).then(res => res.json()).then(res => {
             setRate({
                 stableRunningTime: res.data.stableRunningTime.toFixed(2),
                 correctRate: res.data.correctRate.toFixed(2)
             })
         }).then(_ => true)
+        let p4 = fetch(`${baseUrl}/api/pictures/pressure-diagram/${params.id}`).then(res => res.json()).then(res => {
+            setMeta2_2Data(res)
+        }).then(_ => true)
+        let p5 = fetch(`${baseUrl}/api/pictures/gas-prod/${params.taskid}`).then(res => res.json()).then(res => {
+            setMeta2_3Data(res)
+        }).then(_ => true)
         Promise.all([
-            p1, p2, p3, p4, p5, p6
+            p1, p2, p3, p4, p5
         ]).then(values => {
             if (values.every(i => i == true)) {
                 setLoading(false)
@@ -359,24 +226,17 @@ const Single = () => {
         if (meta && meta.data) {
             changeLine1Data()
             changeLine2Data()
-            changeLine3Data()
-            changeLine4Data()
-        }
-        if (meta3d && meta3d.data) {
-            changeStackLine3d()
         }
         if (meta2_1Data && meta2_1Data.data && meta && meta.data) {
             changeLine2_1Data()
         }
         if (meta2_2Data && meta2_2Data.data) {
             changeLine2_2Data()
-            changeLine2_3Data()
         }
         if (meta2_3Data && meta2_3Data.data) {
-            changeLine2_4Data()
-            changeLine2_5Data()
+            changeLine2_3Data()
         }
-    }, [meta, meta3d, meta2_1Data, meta2_3Data])
+    }, [meta, meta2_1Data, meta2_2Data, meta2_3Data])
     return (
         <div className="c-swiper" >
             {
@@ -401,32 +261,26 @@ const Single = () => {
                             </div>
                             <div className="content-flex">
                                 <div className='content'>
-                                    <div className='title'>油压套压FFT变换，频谱图</div>
+                                    <div className='title'>油套压频谱图</div>
                                     <div className='stack-line'>{stackLine3Data ? <Line {...stackLine3Data} /> : null}</div>
                                 </div>
-                                <div className='content'>
-                                    <div className='title'>油套压差FFT变换，频谱图</div>
-                                    <div className='stack-line'>{stackLine4Data ? <Line {...stackLine4Data} /> : null}</div>
-                                </div>
-                            </div>
-                            <div className='content-flex'>
                                 <div className='content'>
                                     <div className='title'>油压套压差图</div>
                                     <div className='stack-line'>{stackLine2Data ? <Line {...stackLine2Data} /> : null}</div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    {/* <SwiperSlide>
-                        <div className='one-page page'>
-                            <div className="content-flex">
+                            <div className='content-flex'>
                                 <div className='content'>
-                                    <div className='title'>时频图</div>
-                                    <div className='stack-line3D'>{stackLine3d ? <ReactECharts option={stackLine3d} style={{ height: 600 }} /> : null}</div>
+                                    <div className='title'>压强图（开关）</div>
+                                    <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
                                 </div>
+                                {/* <div className='content'>
+                                    <div className='title'>产气量柱状图</div>
+                                    <div className='stack-line'>{stackLine2_3Data ? <Line {...stackLine2_3Data} /> : null}</div>
+                                </div> */}
                             </div>
                         </div>
-                    </SwiperSlide> */}
+                    </SwiperSlide>
                 </Swiper >
             }
         </div>
