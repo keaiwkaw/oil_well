@@ -11,9 +11,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="c-header-menu">
+      {/* <div className="c-header-menu">
         <MenuComp />
-      </div>
+      </div> */}
       <div className="c-container">{element}</div>
     </div>
   );

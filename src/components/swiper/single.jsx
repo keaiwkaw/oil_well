@@ -6,13 +6,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Tag } from 'antd';
 import { Line } from "@ant-design/plots";
 import Loading from '@/components/loading'
-import ReactECharts from 'echarts-for-react';
 import 'echarts-gl';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import './single.less'
+import { baseUrl } from '../../util/http';
 
 const Single = () => {
     const params = useParams();
@@ -326,22 +326,22 @@ const Single = () => {
         })
     }
     useEffect(() => {
-        let p1 = fetch(`http://101.34.38.102:8186/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
+        let p1 = fetch(`${baseUrl}/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
             setMeta(res)
         }).then(_ => true)
-        let p2 = fetch(`http://101.34.38.102:8186/api/pictures/stft/${params.id}`).then(res => res.json()).then(res => {
+        let p2 = fetch(`${baseUrl}/api/pictures/stft/${params.id}`).then(res => res.json()).then(res => {
             setMeta3d(res)
         }).then(_ => true)
-        let p3 = fetch(`http://101.34.38.102:8186/api/pictures/heat-map/${params.id}`).then(res => res.json()).then(res => {
+        let p3 = fetch(`${baseUrl}/api/pictures/heat-map/${params.id}`).then(res => res.json()).then(res => {
             setMeta2_1Data(res)
         }).then(_ => true)
-        let p4 = fetch(`http://101.34.38.102:8186/api/pictures/stable-running-time/${params.id}`).then(res => res.json()).then(res => {
+        let p4 = fetch(`${baseUrl}/api/pictures/stable-running-time/${params.id}`).then(res => res.json()).then(res => {
             setMeta2_2Data(res)
         }).then(_ => true)
-        let p5 = fetch(`http://101.34.38.102:8186/api/pictures/correct-rate/${params.id}`).then(res => res.json()).then(res => {
+        let p5 = fetch(`${baseUrl}/api/pictures/correct-rate/${params.id}`).then(res => res.json()).then(res => {
             setMeta2_3Data(res)
         }).then(_ => true)
-        let p6 = fetch(`http://101.34.38.102:8186/api/pictures/rate-and-time/${params.taskid}`).then(res => res.json()).then(res => {
+        let p6 = fetch(`${baseUrl}/api/pictures/rate-and-time/${params.taskid}`).then(res => res.json()).then(res => {
             setRate({
                 stableRunningTime: res.data.stableRunningTime.toFixed(2),
                 correctRate: res.data.correctRate.toFixed(2)

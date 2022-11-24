@@ -1,8 +1,7 @@
 import { queryGetParams } from './index'
 
 
-const baseUrl = import.meta.env.DEV ? 'http://localhost:8888' : 'http://101.34.38.102:8186'
-
+const baseUrl = import.meta.env.DEV ? 'http://101.34.38.102:8186' : 'http://101.34.38.102:8186'
 const request = (url, method = 'GET', data) => {
     const uri = baseUrl + url
     const upperMethod = method.toUpperCase()
