@@ -149,7 +149,7 @@ const Single = () => {
             xField: 'day',
             yField: 'value',
             seriesField: 'category',
-            color: ['#1979C9', '#D62A0D'],
+            color: ['#D62A0D', '#FAA219'],
         })
     }
     const changeLine2_3Data = () => {
@@ -259,7 +259,7 @@ const Single = () => {
                             </div>
                             <div className='content-flex'>
                                 <div className='content'>
-                                    <div className='title'>压强图（开关）</div>
+                                    <div className='title'>排液效果图</div>
                                     <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
                                 </div>
                                 <div className='content'>
