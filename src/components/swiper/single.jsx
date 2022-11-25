@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Tag } from 'antd';
-import { Line } from "@ant-design/plots";
+import { Line, Column } from "@ant-design/plots";
 import Loading from '@/components/loading'
 import 'echarts-gl';
 
@@ -156,12 +156,35 @@ const Single = () => {
         const len = meta2_3Data.data.length
         for (let i = 0; i < len; i++) {
             const data = {
-                day: i + 1,
-                value: meta2_1Data.data[i],
-                category: ""
+                type: meta2_3Data.data[i].startTimeStamp,
+                sales: Number(Number(meta2_3Data.data[i].sumOfProd).toFixed(2))
             }
             res.push(data)
         }
+        // res.push({
+        //     type: meta2_3Data.data.startTimeStamp,
+        //     sales: Number(Number(meta2_3Data.data.sumOfProd).toFixed(2))
+        // })
+        const config = {
+            data: res,
+            xField: 'type',
+            yField: 'sales',
+            label: {
+                position: 'middle',
+                style: {
+                    fill: '#FFFFFF',
+                },
+            },
+            meta: {
+                type: {
+                    alias: '时间',
+                },
+                sales: {
+                    alias: '产气量',
+                },
+            },
+        };
+        setStackLine2_3Data(config)
     }
     useEffect(() => {
         let p1 = fetch(`${baseUrl}/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
@@ -242,10 +265,10 @@ const Single = () => {
                                     <div className='title'>压强图（开关）</div>
                                     <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
                                 </div>
-                                {/* <div className='content'>
+                                <div className='content'>
                                     <div className='title'>产气量柱状图</div>
-                                    <div className='stack-line'>{stackLine2_3Data ? <Line {...stackLine2_3Data} /> : null}</div>
-                                </div> */}
+                                    <div className='stack-line'>{stackLine2_3Data ? <Column {...stackLine2_3Data} /> : null}</div>
+                                </div>
                             </div>
                         </div>
                     </SwiperSlide>
