@@ -129,6 +129,7 @@ const Sample = () => {
     setExplainModalVisible(false);
   };
   const handleCloseAnalyzeModal = () => {
+    request('/api/commons/stop')
     setAnalyzeModalVisible(false);
   };
 
