@@ -76,7 +76,7 @@ export const columns1 = [
     }
   },
   {
-    title: '产气量',
+    title: '增产效果',
     dataIndex: 'gasProduction',
     width: 200,
     render: (_, record) => {
