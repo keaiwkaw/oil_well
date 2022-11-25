@@ -13,7 +13,7 @@ const AllSingle = () => {
     const [childTableData, setChildTableData] = useState([])
     const [pieConfig, setPieConfig] = useState()
     const fetchTableData1 = (current = 1) => {
-        fetch(`${baseUrl}/groups/${id}`, {
+        fetch(`http://101.34.38.102:8186/groups/${id}`, {
             method: "GET",
         }).then(response => response.json()).then(res => {
             const arr = res.data.map((item, index) => {
