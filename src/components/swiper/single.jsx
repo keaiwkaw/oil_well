@@ -81,7 +81,7 @@ const Single = () => {
         })
     }
     const changeLine2_1Data = () => {
-        const res = []
+        let res = []
         const len = meta2_1Data.data.length
         for (let i = 0; i < len; i++) {
             const data = {
@@ -115,6 +115,7 @@ const Single = () => {
             }
             res.push(bpi, pi, zuv, scms)
         }
+        // res = res.reverse()
         setStackLine2_1Data({
             data: res,
             xField: 'day',

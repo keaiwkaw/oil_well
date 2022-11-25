@@ -210,7 +210,7 @@ const Index = () => {
       pageSize: 10,
       ...info2
     }
-    fetch(queryGetParams(`${baseUrl}/groups`, req), {
+    fetch(queryGetParams(`http://101.34.38.102:8186/groups`, req), {
       method: "GET"
     }).then(response => response.json()).then(res => {
       if (total2 !== res.data.total) {
