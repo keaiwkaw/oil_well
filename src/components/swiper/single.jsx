@@ -95,12 +95,12 @@ const Single = () => {
         for (let i = 0; i < len2; i++) {
             const bpi = {
                 day: i + 1,
-                value: meta.data.originBpi[i],
+                value: meta.data.originBpi[len2 - i],
                 category: "套压"
             }
             const pi = {
                 day: i + 1,
-                value: meta.data.originPi[i],
+                value: meta.data.originPi[len2 - i],
                 category: "油压"
             }
             const zuv = {
