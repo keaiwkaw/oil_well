@@ -23,6 +23,16 @@ export default defineConfig({
         changeOrigin: true,
         // rewrite: (path) => path.replace(/^\/api/, '')
       },
+      '/old': {
+        target: 'http://101.34.38.102:8000/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/old/, '')
+      },
+      '/sb': {
+        target: 'http://101.34.38.102:8186/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/sb/, '')
+      }
     },
 
   },

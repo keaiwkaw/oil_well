@@ -7,11 +7,12 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "serve":"pm2 start app.cjs"
+    "serve": "pm2 start app.cjs"
   },
   "dependencies": {
     "@ant-design/plots": "^1.2.2",
     "antd": "^4.23.6",
+    "dayjs": "^1.11.6",
     "echarts": "^5.4.0",
     "echarts-for-react": "^3.0.2",
     "echarts-gl": "^2.0.9",

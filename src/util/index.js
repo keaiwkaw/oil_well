@@ -7,10 +7,29 @@ function queryGetParams(url, data) {
     }
   })
   const p = params.join('&')
-  return decodeURIComponent(url +( haveParams ? "?" : "&") + p);
+  return decodeURIComponent(url + (haveParams ? "?" : "&") + p);
 }
 
 
+function arrayToTree(arr) {
+  const map = {};
+  const res = []
+  arr.forEach((i) => {
+    map[i.orgId] = i
+  })
+  arr.forEach((i) => {
+    const parent = map[i.parentId]
+    if (parent) {
+      parent.children = parent.children || [];
+      parent.children.push(i)
+    } else {
+      res.push(i)
+    }
+  })
+  return res;
+}
+
 export {
-  queryGetParams
+  queryGetParams,
+  arrayToTree
 }

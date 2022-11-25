@@ -1,4 +1,4 @@
-import { Modal, Table, columns } from "antd"
+import { Modal, Progress, Button } from "antd"
 
 const SearchResModal = (props) => {
     const { analyzeModalVisible, handleCloseAnalyzeModal } = props

@@ -1,0 +1,3075 @@
+{
+    "code": 200,
+    "msg": "success",
+    "data": [
+        {
+            "orgId": "SVfejIOcq1",
+            "orgName": "第一采气厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "SVfejIOcq2",
+            "orgName": "第二采气厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "SVfejIOcq3",
+            "orgName": "第三采气厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "ZSowUbmRWx",
+            "orgName": "第四采气厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "COHhyYbl4v",
+            "orgName": "第五采气厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "W1WjM98RnI",
+            "orgName": "第六采气厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "rpBEjP8prn",
+            "orgName": "第一采油厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 21.0
+        },
+        {
+            "orgId": "CQeiPpGTvU",
+            "orgName": "第二采油厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 22.0
+        },
+        {
+            "orgId": "SVfejIOuc3",
+            "orgName": "第三采油厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 23.0
+        },
+        {
+            "orgId": "SVfejIOuc4",
+            "orgName": "第四采油厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 24.0
+        },
+        {
+            "orgId": "SVfejIOLc5",
+            "orgName": "第五采油厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 25.0
+        },
+        {
+            "orgId": "SVfejIOdc6",
+            "orgName": "第六采油厂",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 26.0
+        },
+        {
+            "orgId": "ZBOBoHai",
+            "orgName": "渤海钻探",
+            "parentId": "0",
+            "parentName": "长庆油田",
+            "orgLevelId": "10",
+            "orgLevelName": "厂",
+            "sortCode": 40.0
+        },
+        {
+            "orgId": "JCu4bWHR35",
+            "orgName": "作业一区",
+            "parentId": "COHhyYbl4v",
+            "parentName": "第五采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "3Ibkid5qlT",
+            "orgName": "作业一区",
+            "parentId": "W1WjM98RnI",
+            "parentName": "第六采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "ZBSU49QK",
+            "orgName": "苏49区块",
+            "parentId": "ZBOBoHai",
+            "parentName": "渤海钻探",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "CQlWglUaEE",
+            "orgName": "作业一区",
+            "parentId": "SVfejIOcq2",
+            "parentName": "第二采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "cIYJqDIQaG",
+            "orgName": "作业一区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "ANbrc3je28",
+            "orgName": "采四作业一区",
+            "parentId": "ZSowUbmRWx",
+            "parentName": "第四采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "tJ6kOm7vhq",
+            "orgName": "作业一区",
+            "parentId": "SVfejIOcq3",
+            "parentName": "第三采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "fgFgwloIIV",
+            "orgName": "作业二区",
+            "parentId": "SVfejIOcq3",
+            "parentName": "第三采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "C8efnPh2hB",
+            "orgName": "作业二区",
+            "parentId": "SVfejIOcq2",
+            "parentName": "第二采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "JteOM9d3Ve",
+            "orgName": "作业二区",
+            "parentId": "W1WjM98RnI",
+            "parentName": "第六采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "BD8IwsDwen",
+            "orgName": "作业二区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "eAoxG1Gp3o",
+            "orgName": "采四作业二区",
+            "parentId": "ZSowUbmRWx",
+            "parentName": "第四采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "dQpC0xFqrB",
+            "orgName": "作业三区",
+            "parentId": "SVfejIOcq2",
+            "parentName": "第二采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "MxnTz6J7xD",
+            "orgName": "作业三区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "nKlyYII94y",
+            "orgName": "作业三区",
+            "parentId": "SVfejIOcq3",
+            "parentName": "第三采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "CQBdXKjzMT",
+            "orgName": "作业三区",
+            "parentId": "W1WjM98RnI",
+            "parentName": "第六采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "MWHpjiBRPG",
+            "orgName": "作业三区",
+            "parentId": "COHhyYbl4v",
+            "parentName": "第五采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "6vexdogzPW",
+            "orgName": "作业四区",
+            "parentId": "SVfejIOcq3",
+            "parentName": "第三采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "3JfhgLouIX",
+            "orgName": "作业四区",
+            "parentId": "COHhyYbl4v",
+            "parentName": "第五采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "CQNvEbcVSh",
+            "orgName": "作业四区",
+            "parentId": "W1WjM98RnI",
+            "parentName": "第六采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "aA6OiY71Rw",
+            "orgName": "采四作业二区(苏西)",
+            "parentId": "ZSowUbmRWx",
+            "parentName": "第四采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "aG2f2LbmPe",
+            "orgName": "作业四区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "1JZifKRaoS",
+            "orgName": "作业四区",
+            "parentId": "SVfejIOcq2",
+            "parentName": "第二采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "45RSvpeEZb",
+            "orgName": "作业五区",
+            "parentId": "SVfejIOcq2",
+            "parentName": "第二采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "lgxvIiASEp",
+            "orgName": "作业五区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "uBFLGBl0cj",
+            "orgName": "作业六区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "u6rDMrGoEt",
+            "orgName": "作业六区",
+            "parentId": "SVfejIOcq2",
+            "parentName": "第二采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "CQKBsLkqOl",
+            "orgName": "作业七区",
+            "parentId": "SVfejIOcq2",
+            "parentName": "第二采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "9AN1YWCME4",
+            "orgName": "作业七区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "eq3eGztKpK",
+            "orgName": "作业八区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "iaNVkYjbu9",
+            "orgName": "作业九区",
+            "parentId": "SVfejIOcq1",
+            "parentName": "第一采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "CQvwKqJswC",
+            "orgName": "采二探井作业区",
+            "parentId": "SVfejIOcq2",
+            "parentName": "第二采气厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "CQWOuzkLvA",
+            "orgName": "采气作业区",
+            "parentId": "CQeiPpGTvU",
+            "parentName": "第二采油厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 24.0
+        },
+        {
+            "orgId": "CQokDwiAgu",
+            "orgName": "采气作业区",
+            "parentId": "rpBEjP8prn",
+            "parentName": "第一采油厂",
+            "orgLevelId": "20",
+            "orgLevelName": "作业区",
+            "sortCode": 25.0
+        },
+        {
+            "orgId": "CQA7uDKtNk",
+            "orgName": "南52站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 0.0
+        },
+        {
+            "orgId": "hmyUMT6bY6",
+            "orgName": "苏54-2集气站",
+            "parentId": "aA6OiY71Rw",
+            "parentName": "采四作业二区(苏西)",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 0.0
+        },
+        {
+            "orgId": "TYRPWxPdzc",
+            "orgName": "苏14-1集气交接站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "CQazw2IAZn",
+            "orgName": "神10站",
+            "parentId": "CQlWglUaEE",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "DAEvqI0CMB",
+            "orgName": "高2站",
+            "parentId": "CQBdXKjzMT",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "FRkyOb51pq",
+            "orgName": "榆12站",
+            "parentId": "dQpC0xFqrB",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "pzxyVAIumX",
+            "orgName": "南10站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "FVGbJZ1VGt",
+            "orgName": "桃2-1集气站",
+            "parentId": "fgFgwloIIV",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "QI7oYk2VhF",
+            "orgName": "苏6-1集气交接站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "CwF6EmTEyD",
+            "orgName": "苏6-2集气站",
+            "parentId": "eAoxG1Gp3o",
+            "parentName": "采四作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "ExHt96ZmSj",
+            "orgName": "神1站",
+            "parentId": "u6rDMrGoEt",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "5L6b0qGDP0",
+            "orgName": "洲16站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "0X1kBS0XUO",
+            "orgName": "洲3站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "CQ2EigmfpR",
+            "orgName": "苏东40站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "CQGMY7TqxA",
+            "orgName": "神6站",
+            "parentId": "CQKBsLkqOl",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "wYnrSDCTHA",
+            "orgName": "苏东8站",
+            "parentId": "MWHpjiBRPG",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "JhiOjTVF3G",
+            "orgName": "苏东1站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "Pvzl2gktnv",
+            "orgName": "北10站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "lhZFKbL5iD",
+            "orgName": "陕232井集气站",
+            "parentId": "lgxvIiASEp",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "LFegEiDnvL",
+            "orgName": "高7站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "tA9IC5eZLQ",
+            "orgName": "北16站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "c8fnomDx9J",
+            "orgName": "榆9站",
+            "parentId": "C8efnPh2hB",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "KXMe1SA5Jl",
+            "orgName": "苏47-1集气站",
+            "parentId": "nKlyYII94y",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "TOHqMK3drz",
+            "orgName": "南15站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "Wa1EJi5WGD",
+            "orgName": "苏东17站",
+            "parentId": "3JfhgLouIX",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "7eFjBAQ0TZ",
+            "orgName": "南14站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "iO4fhm9QwV",
+            "orgName": "苏东10站",
+            "parentId": "MWHpjiBRPG",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "03HU716Pa4",
+            "orgName": "南8站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "CQTEUHotzw",
+            "orgName": "苏东1X站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "T4KhFcLIdd",
+            "orgName": "苏54-1集气交接站",
+            "parentId": "aA6OiY71Rw",
+            "parentName": "采四作业二区(苏西)",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "CQ7aoyOrOG",
+            "orgName": "苏南14站",
+            "parentId": "JteOM9d3Ve",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "Hfj3GwKmNk",
+            "orgName": "苏48-3集气站",
+            "parentId": "6vexdogzPW",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "V73CHqs6KP",
+            "orgName": "苏南11站",
+            "parentId": "JteOM9d3Ve",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "feLaji9kiu",
+            "orgName": "北13站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 1.0
+        },
+        {
+            "orgId": "tlVIOUEKbC",
+            "orgName": "榆14站",
+            "parentId": "dQpC0xFqrB",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "CQ0On31Pdh",
+            "orgName": "米4站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "obAxDVnF9E",
+            "orgName": "洲12站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "zOsdJd53uA",
+            "orgName": "中3站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "oH6VF0HXCC",
+            "orgName": "南33站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "CJF83VXIba",
+            "orgName": "南18站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "81LLCChqG7",
+            "orgName": "高9站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "g8vPm87zed",
+            "orgName": "桃2-2集气站",
+            "parentId": "fgFgwloIIV",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "v9Mf4hLITP",
+            "orgName": "榆21站",
+            "parentId": "C8efnPh2hB",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "MMPMTMpkGx",
+            "orgName": "乌5站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "CQbutwlAgp",
+            "orgName": "神15站",
+            "parentId": "CQKBsLkqOl",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "NRjnTbygxa",
+            "orgName": "洲5站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "HQykYODXpn",
+            "orgName": "苏47-2集气站",
+            "parentId": "nKlyYII94y",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "oZ34KIY7B9",
+            "orgName": "苏6-3集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "8nNULu4sr1",
+            "orgName": "苏6-6集气站",
+            "parentId": "eAoxG1Gp3o",
+            "parentName": "采四作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "uwFtKB1M0A",
+            "orgName": "高4站",
+            "parentId": "CQBdXKjzMT",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "yESMVKx89D",
+            "orgName": "北1站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "omskwRrmhf",
+            "orgName": "神2站",
+            "parentId": "u6rDMrGoEt",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "XFYYvv7VRA",
+            "orgName": "苏东18站",
+            "parentId": "3JfhgLouIX",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "CQtS3KJrus",
+            "orgName": "米4增压站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "m0Q7G6NI6r",
+            "orgName": "南30站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "gXGkrHjuFK",
+            "orgName": "苏14-2集气站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "DZ8Pdei1Lr",
+            "orgName": "乌6站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "Ee6K43WZA7",
+            "orgName": "苏南12站",
+            "parentId": "CQNvEbcVSh",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "yjD2BF4hK3",
+            "orgName": "苏东7站",
+            "parentId": "MWHpjiBRPG",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "CGASiaP4dt",
+            "orgName": "北21站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "4ruMZ8YECF",
+            "orgName": "苏南17站",
+            "parentId": "JteOM9d3Ve",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 2.0
+        },
+        {
+            "orgId": "iDbsrVo9NW",
+            "orgName": "高5站",
+            "parentId": "CQBdXKjzMT",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "ljXTFbekDQ",
+            "orgName": "苏47-6集气站",
+            "parentId": "nKlyYII94y",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "smosZhBnnU",
+            "orgName": "北4站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "9HrUlsXg2U",
+            "orgName": "中10站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "l2CByA3yeQ",
+            "orgName": "南34站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "J1unJZdSwJ",
+            "orgName": "苏东2站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "K2N9JAyECT",
+            "orgName": "苏东41-3集气站",
+            "parentId": "eAoxG1Gp3o",
+            "parentName": "采四作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "OCRSTfyhqm",
+            "orgName": "洲14站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "CQWzDetJW8",
+            "orgName": "神4站",
+            "parentId": "u6rDMrGoEt",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "RurwtXAtw9",
+            "orgName": "苏6-4集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "QgPkvxp6VA",
+            "orgName": "苏东3X站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "sQaQSeOGGY",
+            "orgName": "乌4站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "FQmf8faWVv",
+            "orgName": "苏南13站",
+            "parentId": "CQNvEbcVSh",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "WJhS125522",
+            "orgName": "桃2-4集气站",
+            "parentId": "fgFgwloIIV",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "2gFXRBPIgS",
+            "orgName": "南37站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "OBeeGa17U2",
+            "orgName": "洲4站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "2pTCoddX7y",
+            "orgName": "北15站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "CQNOpfpqAe",
+            "orgName": "神9站",
+            "parentId": "CQlWglUaEE",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "KOU5ilq5To",
+            "orgName": "苏南18站",
+            "parentId": "JteOM9d3Ve",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "CQKJVV1wlo",
+            "orgName": "神14站",
+            "parentId": "CQKBsLkqOl",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "CwU3g9B2HS",
+            "orgName": "榆20站",
+            "parentId": "C8efnPh2hB",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "8BWbMqSyxm",
+            "orgName": "苏东20站",
+            "parentId": "3JfhgLouIX",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "uDw7uYJd4A",
+            "orgName": "南2站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "tIMyiZtWrn",
+            "orgName": "苏14-4集气站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "3w9yvq4Su7",
+            "orgName": "高11站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "aWEFJXnJTe",
+            "orgName": "苏东3站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "JHMk8kKzEz",
+            "orgName": "中5站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "565b6Nzz6C",
+            "orgName": "榆15站",
+            "parentId": "dQpC0xFqrB",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 3.0
+        },
+        {
+            "orgId": "trYPbpmsim",
+            "orgName": "北2站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "Wnl3M8ESgx",
+            "orgName": "桃2-5集气站",
+            "parentId": "fgFgwloIIV",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "JIxJyCf46F",
+            "orgName": "榆19站",
+            "parentId": "dQpC0xFqrB",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "RxLokCUiBZ",
+            "orgName": "苏36-1集气交接站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "CQaNNdiWqf",
+            "orgName": "神3站",
+            "parentId": "u6rDMrGoEt",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "oRQQND2JGD",
+            "orgName": "苏东41-4集气站",
+            "parentId": "eAoxG1Gp3o",
+            "parentName": "采四作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "Cb1IcGo2fE",
+            "orgName": "高8站",
+            "parentId": "CQBdXKjzMT",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "K3VKai4qS4",
+            "orgName": "中8站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "gqeqb66x6j",
+            "orgName": "苏47-4集气站",
+            "parentId": "nKlyYII94y",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "MSVLkTcboG",
+            "orgName": "苏东11站",
+            "parentId": "MWHpjiBRPG",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "F2Y3Nj1yJL",
+            "orgName": "洲13站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "jWaJ6Wu1nB",
+            "orgName": "苏南15站",
+            "parentId": "CQNvEbcVSh",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "CQpQo5MO8E",
+            "orgName": "苏南19站",
+            "parentId": "JteOM9d3Ve",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "cHZWgOSMFO",
+            "orgName": "苏东4站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "O1tWNlBjEN",
+            "orgName": "南23站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "BoFf7F4a82",
+            "orgName": "北6站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "LB3lfEcAZ7",
+            "orgName": "高12站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "DYjaeKHXNh",
+            "orgName": "乌3站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "71I1AnMrcS",
+            "orgName": "苏东19站",
+            "parentId": "3JfhgLouIX",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "uztjS4oILd",
+            "orgName": "榆10站",
+            "parentId": "C8efnPh2hB",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "sQEqQzinLC",
+            "orgName": "北14站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "eNl6DaYfV2",
+            "orgName": "洲2站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "sgbmJ61HjM",
+            "orgName": "苏14-3集气站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "CQjVMjFmqr",
+            "orgName": "神7站",
+            "parentId": "CQKBsLkqOl",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "pFaWbfBZK1",
+            "orgName": "苏东4X站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "CQaZMJcPdx",
+            "orgName": "神12站",
+            "parentId": "CQlWglUaEE",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 4.0
+        },
+        {
+            "orgId": "w02fr1zTz0",
+            "orgName": "榆11站",
+            "parentId": "C8efnPh2hB",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "nD9crqYAo3",
+            "orgName": "苏东5X站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "ipr5l3rvOC",
+            "orgName": "苏东5站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "CQiU0fEsn8",
+            "orgName": "苏南23站",
+            "parentId": "CQBdXKjzMT",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "3qawBcoyEW",
+            "orgName": "米1站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "7D4jmxAfdd",
+            "orgName": "苏南21站",
+            "parentId": "JteOM9d3Ve",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "lNMyS9dLVZ",
+            "orgName": "苏120-4集气站",
+            "parentId": "nKlyYII94y",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "8CfDOo6Uen",
+            "orgName": "中13站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "nK2eBdeAkb",
+            "orgName": "苏东14站",
+            "parentId": "MWHpjiBRPG",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "fHF44eAgL5",
+            "orgName": "高13站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "CAEXtX7pvt",
+            "orgName": "中7站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "O41r9nd5zj",
+            "orgName": "榆16站",
+            "parentId": "dQpC0xFqrB",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "jfRNujCOdO",
+            "orgName": "北8站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "CQLr7orCjm",
+            "orgName": "神16站",
+            "parentId": "CQKBsLkqOl",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "i7Mxi7tFZ6",
+            "orgName": "北22站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "p0GJRFyrHE",
+            "orgName": "北20站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "08Jeksc4TA",
+            "orgName": "南36站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "CQXAsBL1Z3",
+            "orgName": "神11站",
+            "parentId": "CQlWglUaEE",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "lPuPmDIoJH",
+            "orgName": "苏14-5集气站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "lbkeIxsoSb",
+            "orgName": "苏南16站",
+            "parentId": "CQNvEbcVSh",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "LLCJfD8Yih",
+            "orgName": "苏36-2集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "KyA9WdqjHT",
+            "orgName": "苏6-7集气站 ",
+            "parentId": "eAoxG1Gp3o",
+            "parentName": "采四作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "igz7K8WOf3",
+            "orgName": "南9站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "8MpZfVC69T",
+            "orgName": "苏东9站",
+            "parentId": "3JfhgLouIX",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "rQhYwAof76",
+            "orgName": "桃2-3集气站",
+            "parentId": "fgFgwloIIV",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 5.0
+        },
+        {
+            "orgId": "c3os2wxlR1",
+            "orgName": "苏南27站",
+            "parentId": "CQBdXKjzMT",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "AZLRTCGrSB",
+            "orgName": "苏东15站",
+            "parentId": "3JfhgLouIX",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "liPd6OOUxI",
+            "orgName": "中15站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "JawlZyJqDc",
+            "orgName": "苏东13站",
+            "parentId": "MWHpjiBRPG",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "mZmPWWuo2U",
+            "orgName": "苏南22站",
+            "parentId": "JteOM9d3Ve",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "nkwkpIfCbY",
+            "orgName": "北12站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "62xq6slCDf",
+            "orgName": "苏东6X站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "CQy7iXu1EA",
+            "orgName": "试采四站",
+            "parentId": "CQNvEbcVSh",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "izLHoEhNgw",
+            "orgName": "中6站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "CQNlCTpdOB",
+            "orgName": "神13站",
+            "parentId": "CQKBsLkqOl",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "8MgcpyHL7W",
+            "orgName": "苏东6站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "szW7Kn8DyH",
+            "orgName": "榆18站",
+            "parentId": "dQpC0xFqrB",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "KlOOw8zpIo",
+            "orgName": "乌1站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "2GhX68Q7RU",
+            "orgName": "苏36-3集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "FLiXcZt2qr",
+            "orgName": "北24站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "7o8KffJkjj",
+            "orgName": "苏47-5集气站",
+            "parentId": "nKlyYII94y",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "4ypQzcNhis",
+            "orgName": "榆13站",
+            "parentId": "C8efnPh2hB",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "ImPLJJEgzd",
+            "orgName": "南32站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "CQZfEy6Ya6",
+            "orgName": "高15站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "xgjEI9fUn7",
+            "orgName": "苏东41-1集气站",
+            "parentId": "eAoxG1Gp3o",
+            "parentName": "采四作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "h6cZZwxGPM",
+            "orgName": "洲9站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 6.0
+        },
+        {
+            "orgId": "wxNEwb9XbD",
+            "orgName": "苏东41-2集气站",
+            "parentId": "eAoxG1Gp3o",
+            "parentName": "采四作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "5mxe4prlDl",
+            "orgName": "苏36-4集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "hD0cSpA5X9",
+            "orgName": "洲1站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "FF1kmUaEfW",
+            "orgName": "苏47-1H集气站",
+            "parentId": "nKlyYII94y",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "EAGVsluPvT",
+            "orgName": "苏东12站",
+            "parentId": "MWHpjiBRPG",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "t9ekaRAvZG",
+            "orgName": "北11站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "hfCNC1M3gh",
+            "orgName": "南16站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "C9XP8SzSgZ",
+            "orgName": "乌2站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "WupsgRcKxd",
+            "orgName": "中17站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "CrO8TEf1gl",
+            "orgName": "苏南32站",
+            "parentId": "CQBdXKjzMT",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "CQNnOTiQsG",
+            "orgName": "试采二站",
+            "parentId": "JteOM9d3Ve",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "FCRxPai48O",
+            "orgName": "南7站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "CQPvYHnaU1",
+            "orgName": "榆22站",
+            "parentId": "C8efnPh2hB",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "40jW5RmhTl",
+            "orgName": "中22站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "g7mvuwGYeC",
+            "orgName": "乌8站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "WvX62jYdv7",
+            "orgName": "洲8站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "CQgkgbnHZ0",
+            "orgName": "高16站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "guuuHnr2SA",
+            "orgName": "南25站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 7.0
+        },
+        {
+            "orgId": "swFgaHwWUQ",
+            "orgName": "南6站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "BIJ86974l2",
+            "orgName": "苏120-2集气站",
+            "parentId": "ZBSU49QK",
+            "parentName": "苏49区块",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "CQc4rfXMrb",
+            "orgName": "试采三站",
+            "parentId": "CQBdXKjzMT",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "rCn5IdPI3c",
+            "orgName": "洲19站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "FcSLSuVqME",
+            "orgName": "北9站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "snmotFyeHU",
+            "orgName": "乌7站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "ZZ2Q97cx8g",
+            "orgName": "中2站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "bwXJVYynb5",
+            "orgName": "苏36-6集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "GqXBwN4s6x",
+            "orgName": "洲15站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "CQ4OTJkxJr",
+            "orgName": "苏东21站",
+            "parentId": "MWHpjiBRPG",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "k4X5EuftL8",
+            "orgName": "苏东34站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "L998HElPcx",
+            "orgName": "中18站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "U2YI4eC73S",
+            "orgName": "南11站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "hur6YDxU8J",
+            "orgName": "南26站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "CQT5pmnOYr",
+            "orgName": "高17站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "MEvK8mJUcs",
+            "orgName": "苏14-6集气站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 8.0
+        },
+        {
+            "orgId": "reZ9drPZRX",
+            "orgName": "苏120-3集气站",
+            "parentId": "ZBSU49QK",
+            "parentName": "苏49区块",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "X3y1SU6TW4",
+            "orgName": "南5站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "K5q3j5O7XD",
+            "orgName": "北7站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "vQLpLwBuZe",
+            "orgName": "苏东35站 ",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "BrTv0j7tn1",
+            "orgName": "中9站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "9AxiVcDXOn",
+            "orgName": "洲17站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "CQxmqKbnXn",
+            "orgName": "洲10站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "5Uy0NBqmv0",
+            "orgName": "北23站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "CQ75bUag2r",
+            "orgName": "高18站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "SBXLLMleYK",
+            "orgName": "苏14-7集气站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "7n6ctkclHh",
+            "orgName": "南29站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "FNRzhIwO1N",
+            "orgName": "中19站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "O0HhPWPE7m",
+            "orgName": "苏6-5集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "FDF7VBBDiV",
+            "orgName": "南13站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 9.0
+        },
+        {
+            "orgId": "k1N6zYr4KH",
+            "orgName": "中1站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "1pWu147RCW",
+            "orgName": "南12站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "gsvKHYzKez",
+            "orgName": "中21站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "CQVaRpiYWb",
+            "orgName": "高19站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "r4YaHh8D1n",
+            "orgName": "乌9站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "CQyivuu8m7",
+            "orgName": "米2站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "2xmOmTWpgq",
+            "orgName": "南27站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "nXUxOV6SL6",
+            "orgName": "苏36-5集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "nTWhcHF5g7",
+            "orgName": "南4站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "CQuCQUGKYl",
+            "orgName": "苏东38站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "CQASGZERnj",
+            "orgName": "苏14-8集气站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "fp271hKR97",
+            "orgName": "洲6站",
+            "parentId": "45RSvpeEZb",
+            "parentName": "作业五区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "OL6V28jBG3",
+            "orgName": "北5站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 10.0
+        },
+        {
+            "orgId": "9jxbv33NGq",
+            "orgName": "南22站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "nCueXFtRBR",
+            "orgName": "苏48-6集气站",
+            "parentId": "ZBSU49QK",
+            "parentName": "苏49区块",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "CQssgvXwsx",
+            "orgName": "苏47-3集气站",
+            "parentId": "nKlyYII94y",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "6Wcc8i9bzs",
+            "orgName": "中20站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "xRZGy46QLd",
+            "orgName": "北3站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "42tO0o6DNM",
+            "orgName": "南24站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "CQMUX2Zo27",
+            "orgName": "苏东37站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "CQzQs0oW75",
+            "orgName": "苏东41站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "vceppBFrlp",
+            "orgName": "中16站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "CQMh3U1bf4",
+            "orgName": "高20站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "CQ07Kj7u5J",
+            "orgName": "米5站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "6hVde0Sfny",
+            "orgName": "南3站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "CQKVvth7Rm",
+            "orgName": "苏6-8集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 11.0
+        },
+        {
+            "orgId": "tR8JNgxf8A",
+            "orgName": "南21站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "CQqXPnUXXT",
+            "orgName": "苏36-7集气站",
+            "parentId": "ANbrc3je28",
+            "parentName": "采四作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "CQsMlPvZbE",
+            "orgName": "米3站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "qkPPz2kvTn",
+            "orgName": "西1站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "BAXF337w8C",
+            "orgName": "南44站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "5o5sG0bZGa",
+            "orgName": "中14站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "ZBNZCQ2",
+            "orgName": "无集气站",
+            "parentId": "1JZifKRaoS",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "nA3vvi9Pvq",
+            "orgName": "南31站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "CQjWGUKhVg",
+            "orgName": "试采一站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "eeePenOtQh",
+            "orgName": "苏48-5集气站",
+            "parentId": "ZBSU49QK",
+            "parentName": "苏49区块",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "MBEfMrBWnP",
+            "orgName": "北19站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "CQs1tMwG28",
+            "orgName": "苏东33站",
+            "parentId": "eq3eGztKpK",
+            "parentName": "作业八区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 12.0
+        },
+        {
+            "orgId": "Ck3cZMnwga",
+            "orgName": "中12站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 13.0
+        },
+        {
+            "orgId": "o8U46BqJXg",
+            "orgName": "南35站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 13.0
+        },
+        {
+            "orgId": "fjn0WnUovZ",
+            "orgName": "南28站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 13.0
+        },
+        {
+            "orgId": "CQqVXCiRei",
+            "orgName": "北26站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 13.0
+        },
+        {
+            "orgId": "dF8vh16XcB",
+            "orgName": "北17站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 13.0
+        },
+        {
+            "orgId": "bpbBLjr2fk",
+            "orgName": "中4站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 13.0
+        },
+        {
+            "orgId": "PVikj0gkAa",
+            "orgName": "苏48-3H集气站",
+            "parentId": "6vexdogzPW",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 13.0
+        },
+        {
+            "orgId": "2f4BAMLtnY",
+            "orgName": "中11站",
+            "parentId": "cIYJqDIQaG",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 14.0
+        },
+        {
+            "orgId": "JvNu7GTuHX",
+            "orgName": "南39站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 14.0
+        },
+        {
+            "orgId": "U8Ev3Iy5aS",
+            "orgName": "苏东39站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 14.0
+        },
+        {
+            "orgId": "z9hIRu9iss",
+            "orgName": "北18站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 14.0
+        },
+        {
+            "orgId": "0eDsS8Nf7U",
+            "orgName": "南45站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 14.0
+        },
+        {
+            "orgId": "csa1NtADkn",
+            "orgName": "苏48-1集气站",
+            "parentId": "6vexdogzPW",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 14.0
+        },
+        {
+            "orgId": "8MFwHBowQe",
+            "orgName": "中23站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 14.0
+        },
+        {
+            "orgId": "AfjHvkqojY",
+            "orgName": "南17站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 14.0
+        },
+        {
+            "orgId": "kPHnL4RDil",
+            "orgName": "中24站",
+            "parentId": "MxnTz6J7xD",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 15.0
+        },
+        {
+            "orgId": "CQAtBWWB27",
+            "orgName": "南48站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 15.0
+        },
+        {
+            "orgId": "CQ58GHuO15",
+            "orgName": "苏东42站",
+            "parentId": "iaNVkYjbu9",
+            "parentName": "作业九区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 15.0
+        },
+        {
+            "orgId": "CQW3YA5YNW",
+            "orgName": "南50站",
+            "parentId": "9AN1YWCME4",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 15.0
+        },
+        {
+            "orgId": "Dn6pfl4q0B",
+            "orgName": "南19站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 15.0
+        },
+        {
+            "orgId": "CQshId2yr2",
+            "orgName": "苏14-5X集气站",
+            "parentId": "tJ6kOm7vhq",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 15.0
+        },
+        {
+            "orgId": "CfjTu4smJG",
+            "orgName": "南20站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 16.0
+        },
+        {
+            "orgId": "jc2dXNJeSN",
+            "orgName": "苏48-2集气站",
+            "parentId": "6vexdogzPW",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 16.0
+        },
+        {
+            "orgId": "Qs8Dq5FGkV",
+            "orgName": "苏东16站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 16.0
+        },
+        {
+            "orgId": "aIe9k3SnN0",
+            "orgName": "苏东16X站",
+            "parentId": "JCu4bWHR35",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 16.0
+        },
+        {
+            "orgId": "CQW75NF1UO",
+            "orgName": "南49站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 16.0
+        },
+        {
+            "orgId": "CQoagm00if",
+            "orgName": "北25站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 16.0
+        },
+        {
+            "orgId": "CQdaESulfq",
+            "orgName": "北5站新",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 17.0
+        },
+        {
+            "orgId": "ASeZXOxV9M",
+            "orgName": "南1站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 17.0
+        },
+        {
+            "orgId": "kEGoJ1rVLE",
+            "orgName": "南40站",
+            "parentId": "BD8IwsDwen",
+            "parentName": "作业二区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 18.0
+        },
+        {
+            "orgId": "CQzgZfglE3",
+            "orgName": "苏东36站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 18.0
+        },
+        {
+            "orgId": "CQsYTSMCNB",
+            "orgName": "庆1集气站",
+            "parentId": "CQWOuzkLvA",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 26.0
+        },
+        {
+            "orgId": "CQKq5BFZxd",
+            "orgName": "陇东边远井集气站",
+            "parentId": "CQWOuzkLvA",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 27.0
+        },
+        {
+            "orgId": "CQfl4YW1nO",
+            "orgName": "庆2集气站",
+            "parentId": "CQWOuzkLvA",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 28.0
+        },
+        {
+            "orgId": "qN7v2TcyOr",
+            "orgName": "龙1站",
+            "parentId": "CQokDwiAgu",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 29.0
+        },
+        {
+            "orgId": "CQNJGknYzy",
+            "orgName": "庆3集气站",
+            "parentId": "CQWOuzkLvA",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 29.0
+        },
+        {
+            "orgId": "eumk0fWsRV",
+            "orgName": "洲18站",
+            "parentId": "CQokDwiAgu",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 30.0
+        },
+        {
+            "orgId": "CQyKZ0NU18",
+            "orgName": "宜3站",
+            "parentId": "CQokDwiAgu",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 31.0
+        },
+        {
+            "orgId": "CQUQi6w1sq",
+            "orgName": "宜川供气站",
+            "parentId": "CQokDwiAgu",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 32.0
+        },
+        {
+            "orgId": "CQXk5lOq5Q",
+            "orgName": "南53站",
+            "parentId": "uBFLGBl0cj",
+            "parentName": "作业六区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 34.0
+        },
+        {
+            "orgId": "CQ8IIfHZSQ",
+            "orgName": "榆17站",
+            "parentId": "dQpC0xFqrB",
+            "parentName": "作业三区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 35.0
+        },
+        {
+            "orgId": "CQONDrLwzj",
+            "orgName": "神18站",
+            "parentId": "CQKBsLkqOl",
+            "parentName": "作业七区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 36.0
+        },
+        {
+            "orgId": "ZbzdCcsclz",
+            "orgName": "高桥采出水站",
+            "parentId": "3Ibkid5qlT",
+            "parentName": "作业一区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 37.0
+        },
+        {
+            "orgId": "ZBCQ2JqzA1",
+            "orgName": "无集气站",
+            "parentId": "CQvwKqJswC",
+            "parentName": "采二探井作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 38.0
+        },
+        {
+            "orgId": "CQiLBgWQ6S",
+            "orgName": "庆4集气站",
+            "parentId": "CQWOuzkLvA",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 39.0
+        },
+        {
+            "orgId": "CQVNz2l8Ak",
+            "orgName": "宜1集气站",
+            "parentId": "CQokDwiAgu",
+            "parentName": "采气作业区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 41.0
+        },
+        {
+            "orgId": "CQyVRvJh6s",
+            "orgName": "苏东43站",
+            "parentId": "aG2f2LbmPe",
+            "parentName": "作业四区",
+            "orgLevelId": "30",
+            "orgLevelName": "站",
+            "sortCode": 43.0
+        }
+    ]
+}

@@ -7,15 +7,32 @@ import {
   Progress,
   Popover,
   Input,
+  Upload,
+  message,
+  TreeSelect,
+  AutoComplete
 } from "antd";
 import { useState } from "react";
+import FuncDescModal from "./func-desc-modal";
+import SearchResModal from "./search-res-modal";
+import request, { baseUrl, oldBaseUrl } from "../../util/http";
+import { arrayToTree } from "../../util";
 const { RangePicker } = DatePicker;
-// import { QuestionCircleOutlined } from "@ant-design/icons";
+import dayjs from 'dayjs'
 import "./index.less";
+
+
+import { queryGetParams } from "@/util"
+import { useEffect } from "react";
 
 const { Search } = Input;
 
+const DEFAULT_ALG = "";
+const ALGS = []
+
 const Sample = () => {
+
+
   const columns = [
     {
       title: "序号",
@@ -23,49 +40,23 @@ const Sample = () => {
     },
     {
       title: "采气厂",
-      dataIndex: "gasProductionPlant",
+      dataIndex: "factoryName",
       width: 200,
     },
     {
       title: "作业区",
-      dataIndex: "operationArea",
+      dataIndex: "workZoneName",
       width: 200,
     },
     {
       title: "集气站名称",
-      dataIndex: "gasGatheringStation",
+      dataIndex: "stationName",
       width: 200,
     },
     {
       title: "井号",
-      dataIndex: "wellNum",
-      render: (text) => {
-        return (
-          <Select
-            defaultValue={text}
-            options={[
-              {
-                value: text,
-                label: text,
-              },
-            ]}
-          />
-        );
-      },
-    },
-    {
-      title: "诊断状态",
+      dataIndex: "wellName",
       width: 200,
-      dataIndex: "diagnosticStatus",
-      render: (_, record) => {
-        return (
-          <span
-            style={{ color: !record.diagnosticStatus.code ? "red" : "black" }}
-          >
-            {record.diagnosticStatus.text}
-          </span>
-        );
-      },
     },
     {
       title: "算法类型",
@@ -74,13 +65,9 @@ const Sample = () => {
       render: (text) => {
         return (
           <Select
-            defaultValue={text}
-            options={[
-              {
-                value: text,
-                label: text,
-              },
-            ]}
+            style={{ width: 110 }}
+            defaultValue={''}
+            options={ALGS}
           />
         );
       },
@@ -88,87 +75,20 @@ const Sample = () => {
     {
       title: "开始时间",
       width: 200,
-      dataIndex: "beginTime",
+      dataIndex: "startTimeStamp",
     },
     {
       title: "截至时间",
       width: 200,
-      dataIndex: "endTime",
+      dataIndex: "endTimeStamp",
     },
     {
       title: "操作",
       width: 200,
-      render: (row, record) => <Button type="primary">移除</Button>,
+      render: (row, record, index) => <Button type="primary" onClick={() => { handleDeleteTableItem(index) }}>移除</Button>,
     },
   ];
 
-  const tableData = [
-    {
-      gasProductionPlant: "第二采气厂",
-      operationArea: "作业二区",
-      gasGatheringStation: "榆10站",
-      wellNum: "榆47-11C1",
-      diagnosticStatus: {
-        code: 1,
-        text: "基本正常",
-      },
-      algorithmType: "huffman",
-      beginTime: "2022-1-1",
-      endTime: "2022-3-5",
-    },
-    {
-      gasProductionPlant: "第二采气厂",
-      operationArea: "作业二区",
-      gasGatheringStation: "榆10站",
-      wellNum: "榆47-11C1",
-      diagnosticStatus: {
-        code: 1,
-        text: "正常无排液",
-      },
-      algorithmType: "huffman",
-      beginTime: "2022-1-1",
-      endTime: "2022-3-5",
-    },
-    {
-      gasProductionPlant: "第二采气厂",
-      operationArea: "作业二区",
-      gasGatheringStation: "榆10站",
-      wellNum: "榆47-11C1",
-      diagnosticStatus: {
-        code: 1,
-        text: "正常",
-      },
-      algorithmType: "huffman",
-      beginTime: "2022-1-1",
-      endTime: "2022-3-5",
-    },
-    {
-      gasProductionPlant: "第二采气厂",
-      operationArea: "作业二区",
-      gasGatheringStation: "榆10站",
-      wellNum: "榆47-11C1",
-      diagnosticStatus: {
-        code: 0,
-        text: "油压异常",
-      },
-      algorithmType: "huffman",
-      beginTime: "2022-1-1",
-      endTime: "2022-3-5",
-    },
-    {
-      gasProductionPlant: "第二采气厂",
-      operationArea: "作业二区",
-      gasGatheringStation: "榆10站",
-      wellNum: "榆47-11C1",
-      diagnosticStatus: {
-        code: 1,
-        text: "正常",
-      },
-      algorithmType: "huffman",
-      beginTime: "2022-1-1",
-      endTime: "2022-3-5",
-    },
-  ];
 
   const [analyzeModalVisible, setAnalyzeModalVisible] = useState(false);
 
@@ -176,7 +96,24 @@ const Sample = () => {
 
   const [popoverVisible, setPopoverVisible] = useState(false);
 
-  const handlePageChange = () => {};
+  const [searchDataVisible, setSearchDataVisible] = useState(false)
+
+  const [tableData, setTableData] = useState([])
+  const [copyTableData, setCopyTableData] = useState([])
+  const [total, setTotal] = useState(0)
+  const [allSelect, setAllSelect] = useState([])
+
+  const [sampleValue, setSampleValue] = useState('')
+  const [autoCompleteOptions, setAutoCompleteOptions] = useState([])
+
+  const [analysesValue, setAnalysesValue] = useState('')
+
+  const [disableAnalysesBtn, setDisableAnalysesBtn] = useState(true)
+
+  const handlePageChange = () => {
+
+  };
+
   const handleCloseExplainModal = () => {
     setExplainModalVisible(false);
   };
@@ -184,7 +121,30 @@ const Sample = () => {
     setAnalyzeModalVisible(false);
   };
 
+  /** 开始分析 */
   const handleOpenAnalyzeModal = () => {
+    const list = tableData.map(i => {
+      return {
+        endTimeStamp: i.endTimeStamp,
+        startTimeStamp: i.startTimeStamp,
+        wellId: i.wellId,
+        wellName: i.wellName
+      }
+    })
+
+    const data = {
+      data: list,
+      groupName: analysesValue,
+      weightChoose: 0
+    }
+    fetch(`${baseUrl}/sb/dynamics`, {
+      method: "POST",
+      body: JSON.stringify(data)
+    }).then(res => res.json()).then(res => {
+      console.log(res)
+    })
+
+
     setAnalyzeModalVisible(true);
   };
   const handleOpenExplainModal = () => {
@@ -196,85 +156,168 @@ const Sample = () => {
     }
   };
 
-  const handleRangeTimeChange = (dates) => {
-    console.log(dates);
+  const handleRangeTimeChange = (dates, dayStrings) => {
+    console.log(dates, dayStrings);
+    if (!dates) {
+      setTableData(copyTableData)
+    } else {
+      const br = dayjs(dayStrings[0]).unix()
+      const er = dayjs(dayStrings[1]).unix()
+      const data = tableData.filter((i) => {
+        const bri = dayjs(i.startTimeStamp).unix()
+        const eri = dayjs(i.endTimeStamp).unix()
+        return bri >= br && eri <= er
+      })
+      setTableData(data)
+    }
+
   };
 
   const handleOpenSearchWell = () => {
-    setPopoverVisible(true);
+    if (popoverVisible) {
+      setPopoverVisible(false);
+    } else {
+      setPopoverVisible(true);
+    }
+
+  };
+  const handleOpenSearchData = () => {
+    setSearchDataVisible(true)
+  }
+  const fetchWellById = async () => {
+    fetch(queryGetParams(`${oldBaseUrl}/api/getBaseData`, {
+      pageNo: 1,
+      wellId: sampleValue,
+      pageSize: 500
+    }), {
+      method: "POST",
+    })
+      .then(res => res.json())
+      .then(res => {
+        const data = (res.list || []).map(i => {
+          i.label = i.factoryName + '-' + i.stationName + '-' + i.wellName + "-" + i.workZoneName;
+          i.value = JSON.stringify(i)
+          return i
+        })
+        setAutoCompleteOptions(data)
+        console.log(res);
+      });
   };
 
-  const fetchWellById = (value) => {
-    console.log(value);
-    fetch("http://101.34.38.102:8000/api/getBaseData", {
-      method:"POST",
-      body:JSON.stringify({
-        pageNo:1,
-        wellId
+  /** 下载导入的Excel模板 */
+  const handleDownloadExcelSample = () => {
+    window.open(`${baseUrl}/api/commons/download`)
+  }
+
+  /** 导入excel请求数据 */
+  const handleImportExcel = (info) => {
+    const { file } = info;
+    const { status, response } = file;
+    if (status === 'done') {
+      // console.log(response)
+      const data = (response?.data || []).map((i) => {
+        i.algorithmType = null;
+        return i
       })
-    });
-  };
-  const total = 5;
+      setTableData(data)
+      setCopyTableData(data)
+    }
+    if (status === 'error') {
+      message.error('上传失败');
+    }
+  }
+
+  /** 根据算法类型筛选 */
+  const handleSelectByALG = () => { }
+
+  /** 批量选择Select获取焦点获取厂的数据 */
+  const handleFocusSelect = () => {
+    fetch('src/mock/all.json').then(res => res.json()).then(res => {
+      const data = (res.data || []).map(i => {
+        i.title = i.orgName
+        i.value = i.key = i.orgId
+        return i
+      })
+      setAllSelect(arrayToTree(data))
+    })
+  }
+
+  /** 批量选择的orgID */
+  const handleAllSelectChange = (value) => {
+    console.log(value)
+  }
+
+  /** 删除TableData中的某一项 */
+  const handleDeleteTableItem = (index) => {
+    const data = tableData.filter((i, idx) => {
+      return idx != index
+    })
+    setTableData(data)
+    setCopyTableData(data)
+  }
+
+  /** 设置搜索框值 */
+  const handleSetSampleValue = (data) => {
+    setSampleValue(data)
+  }
+
+  /** 将搜索到的值添加到tableData中 */
+  const handlePushData = (data) => {
+    const newData = JSON.parse(data)
+    const newTable = [...tableData, newData]
+    setTableData(newTable)
+    setCopyTableData(newTable)
+    setPopoverVisible(false)
+  }
+
+  /** 清空参数添加样本input */
+  const resetSearchInputValue = () => {
+    setSampleValue('')
+    // setPopoverVisible(false)
+    setAutoCompleteOptions([])
+  }
+
+  /** 分析input事件改变 */
+  const handleAnalysesValueChange = (e) => {
+    setAnalysesValue(e.target.value)
+  }
+  useEffect(() => {
+    setTotal(tableData?.length || 0)
+  }, [tableData])
+
+  useEffect(() => {
+    resetSearchInputValue()
+  }, [popoverVisible])
+
+  useEffect(() => {
+    if (analysesValue && disableAnalysesBtn) {
+      setDisableAnalysesBtn(false)
+    }
+  }, [analysesValue])
 
   const SearchNode = (
-    <Search
-      placeholder="输入井的ID"
-      onSearch={fetchWellById}
+    <AutoComplete
+      value={sampleValue}
+      options={autoCompleteOptions}
       style={{ width: 200 }}
-    />
+      onSelect={handlePushData}
+      onSearch={handleSetSampleValue}
+    >
+      <Search
+        placeholder="输入井的ID"
+        onSearch={fetchWellById}
+        style={{ width: 200 }}
+        enterButton
+      />
+    </AutoComplete>
+
   );
   return (
     <div className="c-sample">
-      <Modal
-        title=" "
-        open={explainModalVisible}
-        footer={[
-          <Button type="primary" onClick={handleCloseExplainModal}>
-            确认
-          </Button>,
-        ]}
-      >
-        <p>
-          1、各种控制方法的效果体现在所应用气井的历史数据中，本页面功能用于选择进行算法评价的气井数据样本。故障时段的数据不能用于评价，在默认下会根据识别算法自动排除。若需精确指定时段，可以手动选择，并取消勾选“自动剔除异常时段”
-        </p>
-        <p>
-          2、在使用总体分析时，为了充分体现被评价算法特征，避免样本极值对效果的影响，通常单次各算法分析不少于10口井/7天的生产数据。(单井分析不受样本数量限制)
-        </p>
-        <p>3、默认不选择各样本时间的状态下，会自动填充上方总时间。</p>
-        <p>
-          4、本页面支持批量导入、导出，空表格模板可在未选择任何样本时点击导出进行下载，然后填写后点击顶部右侧导入按钮。
-        </p>
-        <p>
-          5、“算法类型选择”一栏，可在选择样本时输入，指定该样本所属算法的名称。所有该项不填的样本会被分成同一类，各算法样本数量应满足条目2中的要求。
-        </p>
-        <p>
-          6、“批量快捷选择”一栏，可通过勾选单井、站点、作业区后点击“确认”的方法，批量变更样本。
-        </p>
-      </Modal>
-      <Modal
-        open={analyzeModalVisible}
-        footer={[
-          <Button type="primary" onClick={handleCloseAnalyzeModal}>
-            终止
-          </Button>,
-        ]}
-        className="c-modal-analyze"
-        bodyStyle={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
-        <p>算法分析中......</p>
-        <p>开始时间:2022/11/10 22:17:03</p>
-        <p>预计剩余时间：1小时32分</p>
-        <Progress percent={30} showInfo={false} />
-        <p>30%</p>
-      </Modal>
+      <FuncDescModal explainModalVisible={explainModalVisible} handleCloseExplainModal={handleCloseExplainModal} />
+      <SearchResModal analyzeModalVisible={analyzeModalVisible} handleCloseAnalyzeModal={handleCloseAnalyzeModal}></SearchResModal>
       <div className="c-sample-header">
         <div className="c-sample-header-icon">
-          {/* <QuestionCircleOutlined /> */}
           <span
             style={{ color: "#2F18FF", cursor: "pointer" }}
             onClick={handleOpenExplainModal}
@@ -285,19 +328,35 @@ const Sample = () => {
         <div className="c-sample-header-input">
           <div className="c-sample-header-input-batch">
             <span className="c-sample-header-input-text">批量快捷选择</span>
-            <Select style={{ width: 220 }} />
+            <TreeSelect
+              style={{ width: 220 }}
+              onFocus={handleFocusSelect}
+              treeData={allSelect}
+              // showCheckedStrategy={TreeSelect.SHOW_PARENT}
+              // treeCheckable
+              onChange={handleAllSelectChange}
+            />
           </div>
           <div className="c-sample-header-input-time">
             <span className="c-sample-header-input-text"> 默认起止时间</span>
             <RangePicker onChange={handleRangeTimeChange} />
           </div>
+          <div className="c-sample-header-input-select">
+            <span className="c-sample-header-input-text"> 算法类型</span>
+            <Select defaultValue={''} style={{ width: 120 }} options={ALGS} onChange={handleSelectByALG} />
+          </div>
         </div>
         <div className="c-sample-header-btn">
-          <Button type="primary">导入</Button>
-          <Button type="primary">导出</Button>
-          <Button type="primary" onClick={handleOpenAnalyzeModal}>
-            开始分析
-          </Button>
+          <Upload name="file" action={`${baseUrl}/api/commons/upload`} onChange={handleImportExcel} showUploadList={false}>
+            <Button type="primary" >导入</Button>
+          </Upload>
+          <Button type="primary" onClick={handleDownloadExcelSample} className={"c-sample-header-btn-download"}>下载模板</Button>
+          <Input.Group compact>
+            <Input placeholder="输入分析名字" style={{ width: '150px' }} value={analysesValue} onChange={handleAnalysesValueChange} />
+            <Button type="primary" onClick={handleOpenAnalyzeModal} disabled={disableAnalysesBtn}>
+              开始分析
+            </Button>
+          </Input.Group>
         </div>
       </div>
       <Table
@@ -306,7 +365,7 @@ const Sample = () => {
         pagination={{
           defaultPageSize: 9,
           total: total,
-          onChange: handlePageChange,
+          showSizeChanger: false
         }}
         rowClassName={setRowColor}
       />
