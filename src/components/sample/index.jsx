@@ -121,6 +121,10 @@ const Sample = () => {
 
   const [disableAnalysesBtn, setDisableAnalysesBtn] = useState(true)
 
+
+  const [sbTime, setSbTime] = useState([]);
+
+
   const handlePageChange = () => {
 
   };
@@ -172,9 +176,14 @@ const Sample = () => {
   };
 
   const handleRangeTimeChange = (dates, dayStrings) => {
-    console.log(dates, dayStrings);
+    // console.log(dates, dayStrings);
+
+    if (dayStrings) {
+      setSbTime(dayStrings)
+    }
     if (!dates) {
       setTableData(copyTableData)
+      setSbTime([])
     } else {
       const br = dayjs(dayStrings[0]).unix()
       const er = dayjs(dayStrings[1]).unix()
@@ -215,7 +224,7 @@ const Sample = () => {
           return i
         })
         setAutoCompleteOptions(data)
-        console.log(res);
+        // console.log(res);
       });
   };
 
@@ -278,7 +287,13 @@ const Sample = () => {
 
   /** 将搜索到的值添加到tableData中 */
   const handlePushData = (data) => {
-    const newData = JSON.parse(data)
+    const newData = JSON.parse(data);
+    if (sbTime.length) {
+      newData.startTimeStamp = sbTime[0]
+      newData.endTimeStamp = sbTime[1]
+    }
+
+    console.log(sbTime)
     const newTable = [...tableData, newData]
     setTableData(newTable)
     setCopyTableData(newTable)
