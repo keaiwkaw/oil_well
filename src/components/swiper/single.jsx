@@ -125,7 +125,6 @@ const Single = () => {
     }
     const changeLine2_2Data = () => {
         const res = []
-        console.log(meta2_2Data);
         const len1 = meta2_2Data.data.bpi.length
         for (let i = 0; i < len1; i++) {
             const bpi = {
@@ -154,7 +153,7 @@ const Single = () => {
     }
     const changeLine2_3Data = () => {
         const res = []
-        const len = meta2_1Data.data.length
+        const len = meta2_3Data.data.length
         for (let i = 0; i < len; i++) {
             const data = {
                 day: i + 1,
@@ -163,37 +162,6 @@ const Single = () => {
             }
             res.push(data)
         }
-        const len2 = meta.data.originBpi.length
-        for (let i = 0; i < len2; i++) {
-            const bpi = {
-                day: i + 1,
-                value: meta.data.originBpi[i],
-                category: "套压"
-            }
-            const pi = {
-                day: i + 1,
-                value: meta.data.originPi[i],
-                category: "油压"
-            }
-            const zuv = {
-                day: i + 1,
-                value: meta.data.originZuv[i],
-                category: "开关井状态"
-            }
-            const scms = {
-                day: i + 1,
-                value: meta.data.originScms[i],
-                category: "生产制度"
-            }
-            res.push(bpi, pi, zuv, scms)
-        }
-        setStackLine2_1Data({
-            data: res,
-            xField: 'day',
-            yField: 'value',
-            seriesField: 'category',
-            color: ['#1979C9', '#D62A0D', '#FAA219', "#000", "green"],
-        })
     }
     useEffect(() => {
         let p1 = fetch(`${baseUrl}/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
