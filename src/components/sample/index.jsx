@@ -28,7 +28,18 @@ import { useEffect } from "react";
 const { Search } = Input;
 
 const DEFAULT_ALG = "";
-const ALGS = []
+const ALGS = [
+  {
+    value: '0',
+    label: '均衡模式',
+  }, {
+    value: '1',
+    label: '正常率优先',
+  }, {
+    value: '2',
+    label: '稳定运行时间优先',
+  }
+]
 
 const Sample = () => {
 
@@ -66,7 +77,7 @@ const Sample = () => {
         return (
           <Select
             style={{ width: 110 }}
-            defaultValue={''}
+            defaultValue="0"
             options={ALGS}
           />
         );
@@ -187,7 +198,7 @@ const Sample = () => {
   const fetchWellById = async () => {
     fetch(queryGetParams(`${oldBaseUrl}/api/getBaseData`, {
       pageNo: 1,
-      wellId: sampleValue,
+      wellName: sampleValue,
       pageSize: 500
     }), {
       method: "POST",
@@ -304,7 +315,7 @@ const Sample = () => {
       onSearch={handleSetSampleValue}
     >
       <Search
-        placeholder="输入井的ID"
+        placeholder="输入井号"
         onSearch={fetchWellById}
         style={{ width: 200 }}
         enterButton

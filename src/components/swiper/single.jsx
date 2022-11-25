@@ -156,15 +156,11 @@ const Single = () => {
         const len = meta2_3Data.data.length
         for (let i = 0; i < len; i++) {
             const data = {
-                type: meta2_3Data.data[i].startTimeStamp,
+                type: meta2_3Data.data[i].startTimeStamp + meta2_3Data.data[i].endTimeStamp,
                 sales: Number(Number(meta2_3Data.data[i].sumOfProd).toFixed(2))
             }
             res.push(data)
         }
-        // res.push({
-        //     type: meta2_3Data.data.startTimeStamp,
-        //     sales: Number(Number(meta2_3Data.data.sumOfProd).toFixed(2))
-        // })
         const config = {
             data: res,
             xField: 'type',
