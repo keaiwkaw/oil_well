@@ -2,9 +2,7 @@ import {
   Table,
   Button,
   DatePicker,
-  Select,
-  Modal,
-  Progress,
+  Cascader,
   Popover,
   Input,
   Upload,
@@ -30,16 +28,42 @@ const { Search } = Input;
 const DEFAULT_ALG = "";
 const ALGS = [
   {
+    label: '均衡',
     value: '0',
-    label: '均衡模式',
-  }, {
-    value: '1',
-    label: '正常率优先',
-  }, {
-    value: '2',
+  },
+  {
     label: '稳定运行时间优先',
-  }
-]
+    value: '1',
+  },
+  {
+    label: '正确率优先',
+    value: '2',
+  },
+  {
+    label: '自选模式',
+    value: '3',
+    children: [
+      {
+        label: '稳定运行时间优先',
+        value: '1',
+        disabled: true,
+      },
+      {
+        label: '正确率优先',
+        value: '2',
+        disabled: true,
+      },
+      {
+        label: '排液效果优先',
+        value: '3',
+      },
+      {
+        label: '增产效果优先',
+        value: '4',
+      },
+    ],
+  },
+];
 
 const Sample = () => {
 
@@ -72,26 +96,39 @@ const Sample = () => {
     {
       title: "算法类型",
       width: 200,
-      dataIndex: "algorithmType",
-      render: (text) => {
-        return (
-          <Select
-            style={{ width: 110 }}
-            defaultValue="0"
-            options={ALGS}
-          />
-        );
+      dataIndex: "weightChoose",
+      render: (_, record) => {
+        let text = ''
+        switch (types && types[0]) {
+          case '0':
+            text = "均衡"
+            break;
+          case '1':
+            text = "稳定运行时间优先"
+            break;
+          case '2':
+            text = "正确率优先"
+            break;
+          case "3":
+            text = "自选模式"
+            break;
+          default:
+            break;
+        }
+        return text;
       },
     },
     {
       title: "开始时间",
       width: 200,
       dataIndex: "startTimeStamp",
+      render: () => sbTime[0]
     },
     {
       title: "截至时间",
       width: 200,
       dataIndex: "endTimeStamp",
+      render: () => sbTime[1]
     },
     {
       title: "操作",
@@ -124,6 +161,8 @@ const Sample = () => {
 
   const [sbTime, setSbTime] = useState([]);
 
+  const [types, setTypes] = useState([]);
+
 
   const handlePageChange = () => {
 
@@ -134,11 +173,11 @@ const Sample = () => {
   };
   const handleCloseAnalyzeModal = () => {
     request('/api/commons/stop')
-    setAnalyzeModalVisible(false);
   };
 
   /** 开始分析 */
   const handleOpenAnalyzeModal = () => {
+    setAnalyzeModalVisible(true);
     const list = tableData.map(i => {
       return {
         endTimeStamp: i.endTimeStamp,
@@ -148,10 +187,21 @@ const Sample = () => {
       }
     })
 
+    let typeArr = types
+    if (types[0] === "3") {
+      // 自选模式
+      typeArr.shift()
+      if (typeArr.length === 0) {
+        // 全选
+        typeArr = ["3", "4"]
+      }
+    }
+
     const data = {
       data: list,
       groupName: analysesValue,
-      weightChoose: 0
+      weightChoose: types[0],
+      customModule: typeArr || []
     }
     fetch(`${baseUrl}/sb/dynamics`, {
       method: "POST",
@@ -160,11 +210,9 @@ const Sample = () => {
         'Content-Type': 'application/json'
       }
     }).then(res => res.json()).then(res => {
-      console.log(res)
+      message.success(res.msg)
+      setAnalyzeModalVisible(false);
     })
-
-
-    setAnalyzeModalVisible(true);
   };
   const handleOpenExplainModal = () => {
     setExplainModalVisible(true);
@@ -176,8 +224,6 @@ const Sample = () => {
   };
 
   const handleRangeTimeChange = (dates, dayStrings) => {
-    // console.log(dates, dayStrings);
-
     if (dayStrings) {
       setSbTime(dayStrings)
     }
@@ -252,7 +298,19 @@ const Sample = () => {
   }
 
   /** 根据算法类型筛选 */
-  const handleSelectByALG = () => { }
+  const handleSelectByALG = (arr) => {
+    if (arr.toString().includes("3")) {
+      for (let i = 0; i < arr.length; i++) {
+        const item = arr[i];
+        if (item.toString().includes("3")) {
+          setTypes(item)
+          break
+        }
+      }
+    } else {
+      setTypes(arr[0])
+    }
+  }
 
   /** 批量选择Select获取焦点获取厂的数据 */
   const handleFocusSelect = () => {
@@ -362,8 +420,8 @@ const Sample = () => {
               style={{ width: 220 }}
               onFocus={handleFocusSelect}
               treeData={allSelect}
-              // showCheckedStrategy={TreeSelect.SHOW_PARENT}
-              // treeCheckable
+              showCheckedStrategy={TreeSelect.SHOW_PARENT}
+              treeCheckable
               onChange={handleAllSelectChange}
             />
           </div>
@@ -373,7 +431,12 @@ const Sample = () => {
           </div>
           <div className="c-sample-header-input-select">
             <span className="c-sample-header-input-text"> 算法类型</span>
-            <Select defaultValue={''} style={{ width: 120 }} options={ALGS} onChange={handleSelectByALG} />
+            <Cascader
+              options={ALGS}
+              onChange={handleSelectByALG}
+              multiple
+              value={types}
+            />
           </div>
         </div>
         <div className="c-sample-header-btn">

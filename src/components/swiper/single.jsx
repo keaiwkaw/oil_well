@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom'
-import { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Tag } from 'antd';
 import { Line, Column } from "@ant-design/plots";
 import Loading from '@/components/loading'
@@ -87,7 +85,7 @@ const Single = () => {
             const data = {
                 day: i + 1,
                 value: meta2_1Data.data[i],
-                category: ""
+                category: "权重"
             }
             res.push(data)
         }
@@ -95,12 +93,12 @@ const Single = () => {
         for (let i = 0; i < len2; i++) {
             const bpi = {
                 day: i + 1,
-                value: meta.data.originBpi[len2 - i],
+                value: meta.data.originBpi[i],
                 category: "套压"
             }
             const pi = {
                 day: i + 1,
-                value: meta.data.originPi[len2 - i],
+                value: meta.data.originPi[i],
                 category: "油压"
             }
             const zuv = {
@@ -115,34 +113,34 @@ const Single = () => {
             }
             res.push(bpi, pi, zuv, scms)
         }
-        // res = res.reverse()
+
+        const len3 = meta.data.originBpiSubBi.length
+        for (let i = 0; i < len3; i++) {
+            const bpiSubBi = {
+                day: i + 1,
+                value: meta.data.originBpiSubBi[i],
+                category: "油套压差"
+            }
+            res.push(bpiSubBi)
+        }
         setStackLine2_1Data({
             data: res,
             xField: 'day',
             yField: 'value',
             seriesField: 'category',
-            color: ['#1979C9', '#D62A0D', '#FAA219', "#000", "green"],
+            color: ['#1979C9', '#D62A0D', '#FAA219', "#000", "green", "purple"],
         })
     }
     const changeLine2_2Data = () => {
         const res = []
-        const len1 = meta2_2Data.data.bpi.length
+        const len1 = meta2_2Data.data.drainage.length
         for (let i = 0; i < len1; i++) {
             const bpi = {
                 day: i + 1,
-                value: meta2_2Data.data.bpi[i],
-                category: "套压"
+                value: meta2_2Data.data.drainage[i],
+                category: "排液系数"
             }
             res.push(bpi)
-        }
-        const len2 = meta2_2Data.data.pi.length
-        for (let i = 0; i < len2; i++) {
-            const pi = {
-                day: i + 1,
-                value: meta2_2Data.data.pi[i],
-                category: "油压"
-            }
-            res.push(pi)
         }
         setStackLine2_2Data({
             data: res,
@@ -184,10 +182,10 @@ const Single = () => {
         setStackLine2_3Data(config)
     }
     useEffect(() => {
-        let p1 = fetch(`${baseUrl}/api/pictures/fft/${params.id}`).then(res => res.json()).then(res => {
+        let p1 = fetch(`${baseUrl}/api/pictures/fft/${params.taskid}`).then(res => res.json()).then(res => {
             setMeta(res)
         }).then(_ => true)
-        let p2 = fetch(`${baseUrl}/api/pictures/heat-map/${params.id}`).then(res => res.json()).then(res => {
+        let p2 = fetch(`${baseUrl}/api/pictures/heat-map/${params.taskid}`).then(res => res.json()).then(res => {
             setMeta2_1Data(res)
         }).then(_ => true)
         let p3 = fetch(`${baseUrl}/api/pictures/rate-and-time/${params.taskid}`).then(res => res.json()).then(res => {
@@ -196,7 +194,7 @@ const Single = () => {
                 correctRate: res.data.correctRate.toFixed(2)
             })
         }).then(_ => true)
-        let p4 = fetch(`${baseUrl}/api/pictures/pressure-diagram/${params.id}`).then(res => res.json()).then(res => {
+        let p4 = fetch(`${baseUrl}/api/pictures/pressure-diagram/${params.taskid}`).then(res => res.json()).then(res => {
             setMeta2_2Data(res)
         }).then(_ => true)
         let p5 = fetch(`${baseUrl}/api/pictures/gas-prod/${params.taskid}`).then(res => res.json()).then(res => {
@@ -215,7 +213,7 @@ const Single = () => {
             changeLine1Data()
             changeLine2Data()
         }
-        if (meta2_1Data && meta2_1Data.data && meta && meta.data) {
+        if (meta2_1Data && meta && meta2_1Data.data && meta.data) {
             changeLine2_1Data()
         }
         if (meta2_2Data && meta2_2Data.data) {
@@ -228,48 +226,35 @@ const Single = () => {
     return (
         <div className="c-swiper" >
             {
-                loading ? <Loading /> : <Swiper
-                    modules={[Navigation]}
-                    slidesPerView={1}
-                    navigation
-                    style={{ height: '100%' }}
-                >
-                    <SwiperSlide>
-                        <div className='two-page page'>
-                            <div className='content-flex'>
-                                <div className='content'>
-                                    <div className='title'>热力图</div>
-                                    <div className='heat-map'>
-                                        <div className='rate'>
-                                            <Tag color='success' style={{ fontSize: 15, padding: 10 }}>稳定性时间:{rate.stableRunningTime}</Tag>
-                                            <Tag color='success' style={{ fontSize: 15, padding: 10 }}>正确率:{rate.correctRate}</Tag>
-                                        </div>
-                                        {stackLine2_1Data ? <Line {...stackLine2_1Data} /> : null}</div>
+                loading ? <Loading /> : <div className='two-page page'>
+                    <div className='content-flex'>
+                        <div className='content'>
+                            <div className='title'>热力图</div>
+                            <div className='heat-map'>
+                                <div className='rate'>
+                                    <Tag color='success' style={{ fontSize: 15, padding: 10 }}>稳定性时间:{rate.stableRunningTime}</Tag>
+                                    <Tag color='success' style={{ fontSize: 15, padding: 10 }}>正确率:{rate.correctRate}</Tag>
                                 </div>
-                            </div>
-                            <div className="content-flex">
-                                <div className='content'>
-                                    <div className='title'>油套压频谱图</div>
-                                    <div className='stack-line'>{stackLine3Data ? <Line {...stackLine3Data} /> : null}</div>
-                                </div>
-                                <div className='content'>
-                                    <div className='title'>油压套压差图</div>
-                                    <div className='stack-line'>{stackLine2Data ? <Line {...stackLine2Data} /> : null}</div>
-                                </div>
-                            </div>
-                            <div className='content-flex'>
-                                <div className='content'>
-                                    <div className='title'>排液效果图</div>
-                                    <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
-                                </div>
-                                <div className='content'>
-                                    <div className='title'>产气量柱状图</div>
-                                    <div className='stack-line'>{stackLine2_3Data ? <Column {...stackLine2_3Data} /> : null}</div>
-                                </div>
-                            </div>
+                                {stackLine2_1Data ? <Line {...stackLine2_1Data} /> : null}</div>
                         </div>
-                    </SwiperSlide>
-                </Swiper >
+                    </div>
+                    <div className="content-flex">
+                        <div className='content'>
+                            <div className='title'>油套压频谱图</div>
+                            <div className='stack-line'>{stackLine3Data ? <Line {...stackLine3Data} /> : null}</div>
+                        </div>
+                        <div className='content'>
+                            <div className='title'>排液效果图</div>
+                            <div className='stack-line'>{stackLine2_2Data ? <Line {...stackLine2_2Data} /> : null}</div>
+                        </div>
+                    </div>
+                    <div className='content-flex'>
+                        <div className='content'>
+                            <div className='title'>产气量柱状图</div>
+                            <div className='stack-line'>{stackLine2_3Data ? <Column {...stackLine2_3Data} /> : null}</div>
+                        </div>
+                    </div>
+                </div>
             }
         </div>
     )

@@ -21,28 +21,28 @@ export const columns1 = [
   {
     title: "作业区",
     dataIndex: "workZoneName",
-    width: 200,
+    width: 150,
   },
   {
     title: "集气站名称",
     dataIndex: "stationName",
-    width: 200,
+    width: 180,
   },
   {
     title: "井号",
     dataIndex: "wellName",
-    width: 200,
+    width: 100,
   },
   {
     title: '总分',
     dataIndex: 'grade',
-    width: 200,
+    width: 100,
     render: (_, record) => Number(record.grade).toFixed(2)
   },
   {
     title: '正常率',
     dataIndex: 'correctRate',
-    width: 200,
+    width: 100,
     render: (_, record) => Number(record.correctRate).toFixed(2)
   },
   {
@@ -54,25 +54,43 @@ export const columns1 = [
     }
   },
   {
+    title: '开始时间',
+    dataIndex: 'startTimeStamp',
+    width: 200,
+  },
+  {
+    title: '结束时间',
+    dataIndex: 'endTimeStamp',
+    width: 200,
+  },
+  {
+    title: '创建时间',
+    dataIndex: 'createTime',
+    width: 200,
+  },
+  {
     title: '排液效果',
     dataIndex: 'drainageEffect',
     width: 200,
     render: (_, record) => {
       let text = ''
       switch (record.drainageEffect) {
-        case 0:
-          text = "优"
-          break;
         case 1:
-          text = "良"
+          text = "差"
           break;
         case 2:
-          text = "差"
+          text = "良"
+          break;
+        case 3:
+          text = "优"
+          break;
+        case 4:
+          text = "无排液"
           break;
         default:
           break;
       }
-      return text
+      return `${text}(${Number(record.drainageCoefficient).toFixed(2)})`
     }
   },
   {
@@ -165,7 +183,11 @@ const Index = () => {
     factoryName: "",
     stationName: "",
     wellName: "",
-    workZoneName: ""
+    workZoneName: "",
+    afterCreateTime: "",
+    afterEndTimeStamp: "",
+    beforeCreateTime: "",
+    beforeStartTimeStamp: ""
   })
 
   const [info2, setInfo2] = useState({
@@ -227,7 +249,7 @@ const Index = () => {
   }
 
   const fetchChildTableData = (list) => {
-    fetch(`${baseUrl}/groups`, {
+    fetch(`http://101.34.38.102:8186/groups`, {
       method: "POST",
       body: JSON.stringify(list),
       headers: {
@@ -300,17 +322,18 @@ const Index = () => {
         <h2 className='c-title'>单井效果</h2>
         <div className='c-search'>
           {
-            [{ factoryName: '采气厂名称' }, { stationName: '集气站名称' }, { workZoneName: '作业区名称' }, { wellName: '井号' }].map((i, index) => {
+            [{ factoryName: '采气厂名称' }, { stationName: '集气站名称' }, { workZoneName: '作业区名称' }, { wellName: '井号' },
+            { beforeStartTimeStamp: '开始时间' }, { afterEndTimeStamp: '结束时间' }, { beforeCreateTime: '开始创建时间' }, { afterCreateTime: '结束创建时间' }].map((i, index) => {
               const k = Object.keys(i)[0];
               const v = i[k]
               return (<div className='c-input' key={index}>
-                {v}:
+                <div className='c-label'>{v}:</div>
                 <Input placeholder={v} onChange={handleChangeInputValue1} name={k} />
               </div>)
             })
           }
-          <Button type="primary" onClick={handleSearch1}>搜索</Button>
         </div>
+        <Button type="primary" onClick={handleSearch1}>搜索</Button>
         <Table columns={columns1} dataSource={tableData1} pagination={{ total: total1, pageSizeOptions: [], onChange: handlePageChange1 }} />
       </div>
       <div className="c-list">

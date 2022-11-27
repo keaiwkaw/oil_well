@@ -28,7 +28,6 @@ const MenuComp = (props) => {
         defaultSelectedKeys="sample"
         onClick={handleClickMenuItem}
       />
-   
     </div>
   );
 };
