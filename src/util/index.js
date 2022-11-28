@@ -1,5 +1,3 @@
-import { time } from "echarts";
-
 function queryGetParams(url, data = {}) {
     const haveParams = url.indexOf("?") == -1 ? true : false;
     let params = [];
