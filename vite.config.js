@@ -28,10 +28,14 @@ export default defineConfig({
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/old/, ""),
             },
-            "/sb": {
+            "/dynamics": {
                 target: "http://101.34.38.102:8186/",
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/sb/, ""),
+                // rewrite: (path) => path.replace(/^\/sb/, ""),
+            },
+            "/groups": {
+                target: "http://101.34.38.102:8186/",
+                changeOrigin: true,
             },
         },
     },

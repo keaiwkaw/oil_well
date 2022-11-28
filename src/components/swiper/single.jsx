@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom'
 import { Tag } from 'antd';
-import { Line, Column } from "@ant-design/plots";
+import { Line, Column, Scatter } from "@ant-design/plots";
+import { Button } from 'antd';
 import Loading from '@/components/loading'
 import 'echarts-gl';
 
@@ -31,6 +32,8 @@ const Single = () => {
     const [stackLine2_1Data, setStackLine2_1Data] = useState(null)
     const [stackLine2_2Data, setStackLine2_2Data] = useState(null)
     const [stackLine2_3Data, setStackLine2_3Data] = useState(null)
+
+    const [isSc, setSc] = useState(false)
     const changeLine1Data = () => {
         const res = []
         const len = meta.data.originBpiSubBi.length
@@ -136,7 +139,7 @@ const Single = () => {
         const len1 = meta2_2Data.data.drainage.length
         for (let i = 0; i < len1; i++) {
             const bpi = {
-                day: i + 1,
+                day: i,
                 value: meta2_2Data.data.drainage[i],
                 category: "排液系数"
             }
@@ -250,9 +253,19 @@ const Single = () => {
                     </div>
                     <div className='content-flex'>
                         <div className='content'>
-                            <div className='title'>产气量柱状图</div>
-                            <div className='stack-line'>{stackLine2_3Data ? <Column {...stackLine2_3Data} /> : null}</div>
+                            <div className='flex'>
+                                <div className='title' onClick={() => { setSc(true) }}>产气量柱状图</div>
+                                <div className='title' onClick={() => { setSc(false) }}>产气量散点图</div>
+                            </div>
+                            {
+                                isSc ? (
+                                    <div className='stack-line'>{stackLine2_3Data ? <Column {...stackLine2_3Data} /> : null}</div>
+                                ) : (
+                                    <div className='stack-line'>{stackLine2_3Data ? <Scatter {...stackLine2_3Data} /> : null}</div>
+                                )
+                            }
                         </div>
+
                     </div>
                 </div>
             }

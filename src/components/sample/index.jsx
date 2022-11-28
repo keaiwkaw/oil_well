@@ -14,7 +14,7 @@ import { useState } from "react";
 import FuncDescModal from "./func-desc-modal";
 import SearchResModal from "./search-res-modal";
 import request, { baseUrl, oldBaseUrl } from "../../util/http";
-import { arrayToTree } from "../../util";
+import { arrayToTree, arrayToTreeFlat } from "../../util";
 const { RangePicker } = DatePicker;
 import dayjs from 'dayjs'
 import "./index.less";
@@ -66,8 +66,6 @@ const ALGS = [
 ];
 
 const Sample = () => {
-
-
   const columns = [
     {
       title: "序号",
@@ -173,6 +171,7 @@ const Sample = () => {
   };
   const handleCloseAnalyzeModal = () => {
     request('/api/commons/stop')
+    setAnalyzeModalVisible(false);
   };
 
   /** 开始分析 */
@@ -203,7 +202,7 @@ const Sample = () => {
       weightChoose: types[0],
       customModule: typeArr || []
     }
-    fetch(`${baseUrl}/sb/dynamics`, {
+    fetch(`${baseUrl}/dynamics`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -320,13 +319,32 @@ const Sample = () => {
         i.value = i.key = i.orgId
         return i
       })
-      setAllSelect(arrayToTree(data))
+      return data
+    }).then((v) => {
+      fetch("src/mock/well.json")
+        .then((res) => res.json())
+        .then((res) => {
+          const { list } = res;
+          setAllSelect(arrayToTreeFlat([...list, ...v]))
+        });
     })
   }
 
   /** 批量选择的orgID */
   const handleAllSelectChange = (value) => {
-    console.log(value)
+    const list = value.map(item => {
+      const obj = JSON.parse(item)
+      return {
+        endTimeStamp: sbTime[0],
+        startTimeStamp: sbTime[1],
+        wellId: obj.wellId,
+        wellName: obj.wellName,
+        factoryName: obj.factoryName,
+        workZoneName: obj.workZoneName,
+        stationName: obj.stationName,
+      }
+    })
+    setTableData([...tableData, ...list])
   }
 
   /** 删除TableData中的某一项 */
@@ -420,7 +438,6 @@ const Sample = () => {
               style={{ width: 220 }}
               onFocus={handleFocusSelect}
               treeData={allSelect}
-              showCheckedStrategy={TreeSelect.SHOW_PARENT}
               treeCheckable
               onChange={handleAllSelectChange}
             />

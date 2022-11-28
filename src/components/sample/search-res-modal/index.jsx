@@ -7,7 +7,7 @@ const SearchResModal = (props) => {
         footer={[
             <Button type="primary" onClick={handleCloseAnalyzeModal}>
                 终止
-            </Button>,
+            </Button>
         ]}
         className="c-modal-analyze"
         bodyStyle={{

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router"
+import { useParams, useLocation } from "react-router"
 
 import { Table } from 'antd';
 import { Pie, Column } from '@ant-design/plots';
@@ -8,8 +8,36 @@ import { baseUrl } from "../../util/http";
 
 import "./allSingle.less"
 import { columns1 } from "../effect";
+const columns = [
+    {
+        title: "分组名称",
+        dataIndex: "groupName",
+        key: 'groupName',
+        width: 200
+    },
+    {
+        title: "井的数量",
+        dataIndex: "sonNodeId",
+        render: (_, record) => record.sonNodeId.length,
+        width: 200
+    },
+    {
+        title: "总分",
+        dataIndex: "totalGrade",
+        key: 'totalGrade',
+        render: (_, record) => Number(record.totalGrade).toFixed(2),
+        width: 200
+    },
+    {
+        title: "创建时间",
+        dataIndex: "createTime",
+        key: 'createTime',
+        width: 200
+    },
+];
 const AllSingle = () => {
-    let { id } = useParams()
+    const { id } = useParams()
+    const { state } = useLocation()
     const [childTableData, setChildTableData] = useState([])
     const [pie1Config, setPie1Config] = useState()
     const [pie2Config, setPie2Config] = useState()
@@ -200,6 +228,7 @@ const AllSingle = () => {
     }, [])
     return (
         <div className="c-all">
+            <Table columns={columns} dataSource={[state]} pagination={false} />
             <Table columns={columns1} dataSource={childTableData} pagination />
             <div className="c-container">
                 <div className="c-content">

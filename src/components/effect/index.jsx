@@ -69,9 +69,9 @@ export const columns1 = [
     width: 200,
   },
   {
-    title: '排液效果',
+    title: '排液效果（排液指数）',
     dataIndex: 'drainageEffect',
-    width: 200,
+    width: 300,
     render: (_, record) => {
       let text = ''
       switch (record.drainageEffect) {
@@ -162,7 +162,7 @@ const columns2 = [
       return (
         <>
           <Space direction="horizontal" size="middle" >
-            <Link to={`/all_single/${row.id}`}>查看详情</Link>
+            <Link to={`/all_single/${row.id}`} state={row}>查看详情</Link>
             <Link onClick={handleDelete}>删除</Link>
           </Space>
         </>
@@ -232,7 +232,7 @@ const Index = () => {
       pageSize: 10,
       ...info2
     }
-    fetch(queryGetParams(`http://101.34.38.102:8186/groups`, req), {
+    fetch(queryGetParams(`${baseUrl}/groups`, req), {
       method: "GET"
     }).then(response => response.json()).then(res => {
       if (total2 !== res.data.total) {
@@ -249,7 +249,7 @@ const Index = () => {
   }
 
   const fetchChildTableData = (list) => {
-    fetch(`http://101.34.38.102:8186/groups`, {
+    fetch(`${baseUrl}/groups`, {
       method: "POST",
       body: JSON.stringify(list),
       headers: {
