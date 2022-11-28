@@ -25,7 +25,7 @@ import { useEffect } from "react";
 
 const { Search } = Input;
 
-const DEFAULT_ALG = "";
+// const DEFAULT_ALG = "";
 const ALGS = [
   {
     label: '均衡',
