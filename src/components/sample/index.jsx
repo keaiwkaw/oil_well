@@ -44,21 +44,21 @@ const ALGS = [
     value: '3',
     children: [
       {
-        label: '稳定运行时间优先',
+        label: '稳定运行时间',
         value: '1',
         disabled: true,
       },
       {
-        label: '正确率优先',
+        label: '正确率',
         value: '2',
         disabled: true,
       },
       {
-        label: '排液效果优先',
+        label: '排液效果',
         value: '3',
       },
       {
-        label: '增产效果优先',
+        label: '增产效果',
         value: '4',
       },
     ],
@@ -269,7 +269,6 @@ const Sample = () => {
           return i
         })
         setAutoCompleteOptions(data)
-        // console.log(res);
       });
   };
 
@@ -368,8 +367,6 @@ const Sample = () => {
       newData.startTimeStamp = sbTime[0]
       newData.endTimeStamp = sbTime[1]
     }
-
-    console.log(sbTime)
     const newTable = [...tableData, newData]
     setTableData(newTable)
     setCopyTableData(newTable)
@@ -443,11 +440,11 @@ const Sample = () => {
             />
           </div>
           <div className="c-sample-header-input-time">
-            <span className="c-sample-header-input-text"> 默认起止时间</span>
+            <span className="c-sample-header-input-text">默认起止时间</span>
             <RangePicker onChange={handleRangeTimeChange} />
           </div>
           <div className="c-sample-header-input-select">
-            <span className="c-sample-header-input-text"> 算法类型</span>
+            <span className="c-sample-header-input-text">算法类型</span>
             <Cascader
               options={ALGS}
               onChange={handleSelectByALG}
@@ -458,7 +455,7 @@ const Sample = () => {
         </div>
         <div className="c-sample-header-btn">
           <Upload name="file" action={`${baseUrl}/api/commons/upload`} onChange={handleImportExcel} showUploadList={false}>
-            <Button type="primary" >导入</Button>
+            <Button type="primary">导入</Button>
           </Upload>
           <Button type="primary" onClick={handleDownloadExcelSample} className={"c-sample-header-btn-download"}>下载模板</Button>
           <Input.Group compact>
