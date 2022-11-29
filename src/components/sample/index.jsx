@@ -13,8 +13,8 @@ import {
 import { useState } from "react";
 import FuncDescModal from "./func-desc-modal";
 import SearchResModal from "./search-res-modal";
-import request, { baseUrl, oldBaseUrl } from "../../util/http";
-import { arrayToTree, arrayToTreeFlat } from "../../util";
+import request, { allFactory, baseUrl, oldBaseUrl, wellList } from "../../util/http";
+import { arrayToTreeFlat } from "../../util";
 const { RangePicker } = DatePicker;
 import dayjs from 'dayjs'
 import "./index.less";
@@ -311,20 +311,26 @@ const Sample = () => {
 
   /** 批量选择Select获取焦点获取厂的数据 */
   const handleFocusSelect = () => {
-    fetch('src/mock/all.json').then(res => res.json()).then(res => {
-      const data = (res.data || []).map(i => {
+    fetch(allFactory).then(res => res.json()).then(res => {
+      const data = (res.data || []).filter(i => {
         i.title = i.orgName
         i.value = i.key = i.orgId
-        return i
+        return i.parentId == 0
       })
       return data
-    }).then((v) => {
-      fetch("src/mock/well.json")
-        .then((res) => res.json())
-        .then((res) => {
-          const { list } = res;
-          setAllSelect(arrayToTreeFlat([...list, ...v]))
-        });
+    }).then((factorys) => {
+      const listArr = new Set()
+      let arr = factorys.map(item => {
+        return fetch(wellList + `?${item.orgId}`)
+          .then((res) => res.json())
+          .then((res) => {
+            const { list } = res;
+            listArr.add(...list)
+          });
+      })
+      Promise.all(arr).then((v) => {
+        setAllSelect(arrayToTreeFlat([...listArr, ...factorys]))
+      })
     })
   }
 

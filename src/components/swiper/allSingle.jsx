@@ -229,7 +229,9 @@ const AllSingle = () => {
     }, [])
     return (
         <div className="c-all">
-            <Table columns={columns} dataSource={[state]} pagination={false} />
+            {
+                state && <Table columns={columns} dataSource={[state]} pagination={false} />
+            }
             <Table columns={columns1} dataSource={childTableData} pagination />
             <div className="c-container">
                 <div className="c-content">
