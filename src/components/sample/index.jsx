@@ -282,7 +282,6 @@ const Sample = () => {
     const { file } = info;
     const { status, response } = file;
     if (status === 'done') {
-      // console.log(response)
       const data = (response?.data || []).map((i) => {
         i.algorithmType = null;
         return i
@@ -454,7 +453,12 @@ const Sample = () => {
           </div>
         </div>
         <div className="c-sample-header-btn">
-          <Upload name="file" action={`${baseUrl}/api/commons/upload`} onChange={handleImportExcel} showUploadList={false}>
+          <Upload
+            name="file"
+            action={`${baseUrl}/api/commons/upload`}
+            onChange={handleImportExcel}
+            showUploadList={false}
+          >
             <Button type="primary">导入</Button>
           </Upload>
           <Button type="primary" onClick={handleDownloadExcelSample} className={"c-sample-header-btn-download"}>下载模板</Button>

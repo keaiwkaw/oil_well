@@ -18,25 +18,25 @@ export default defineConfig({
     server: {
         port: 8888,
         proxy: {
-            "/api": {
-                target: "http://101.34.38.102:8186/",
-                changeOrigin: true,
-                // rewrite: (path) => path.replace(/^\/api/, '')
-            },
-            "/old": {
-                target: "http://101.34.38.102:8000/",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/old/, ""),
-            },
-            "/dynamics": {
-                target: "http://101.34.38.102:8186/",
-                changeOrigin: true,
-                // rewrite: (path) => path.replace(/^\/sb/, ""),
-            },
-            "/groups": {
-                target: "http://101.34.38.102:8186/",
-                changeOrigin: true,
-            },
+            // "/api": {
+            //     target: "http://101.34.38.102:8186/",
+            //     changeOrigin: true,
+            //     // rewrite: (path) => path.replace(/^\/api/, '')
+            // },
+            // "/old": {
+            //     target: "http://101.34.38.102:8000/",
+            //     changeOrigin: true,
+            //     rewrite: (path) => path.replace(/^\/old/, ""),
+            // },
+            // "/dynamics": {
+            //     target: "http://101.34.38.102:8186/",
+            //     changeOrigin: true,
+            //     // rewrite: (path) => path.replace(/^\/sb/, ""),
+            // },
+            // "/groups": {
+            //     target: "http://101.34.38.102:8186/",
+            //     changeOrigin: true,
+            // },
         },
     },
 });

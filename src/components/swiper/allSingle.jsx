@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams, useLocation } from "react-router"
 
 import { Table } from 'antd';
-import { Pie, Column } from '@ant-design/plots';
+import { Pie, Column, Scatter } from '@ant-design/plots';
 
 import { baseUrl } from "../../util/http";
 
@@ -44,6 +44,7 @@ const AllSingle = () => {
     const [pie3Config, setPie3Config] = useState()
     const [pie4Config, setPie4Config] = useState()
     const [columConfig, setColumConfig] = useState()
+    const [isSc, setSc] = useState(false)
     const fetchTableData1 = (current = 1) => {
         fetch(`http://101.34.38.102:8186/groups/${id}`, {
             method: "GET",
@@ -193,7 +194,7 @@ const AllSingle = () => {
             let colums = []
             for (let i = 0; i < res.data.length; i++) {
                 colums.push({
-                    type: i + "1",
+                    type: i,
                     sales: Number(Number(res.data[i]).toFixed(5))
                 })
             }
@@ -260,9 +261,12 @@ const AllSingle = () => {
             </div>
             <div className="c-container">
                 <div className="c-content">
-                    <div className="c-title">增产效果柱状图</div>
+                    <div className='flex'>
+                        <div className='c-title' onClick={() => { setSc(true) }}>增产效果柱状图</div>
+                        <div className='c-title' onClick={() => { setSc(false) }}>增产效果散点图</div>
+                    </div>
                     {
-                        columConfig ? <Column {...columConfig}></Column> : null
+                        isSc ? (columConfig && <Column {...columConfig}></Column>) : (columConfig && <Scatter {...columConfig}></Scatter>)
                     }
                 </div>
             </div>
